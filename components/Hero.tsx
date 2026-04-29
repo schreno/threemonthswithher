@@ -57,15 +57,15 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
           <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z" />
         </svg>
 
-        <svg className="icon icon-cloud icon-2" viewBox="0 0 24 24" fill="#e6c50e" xmlns="http://www.w3.org/2000/svg">
+        <svg className="icon icon-cloud icon-2" viewBox="0 0 24 24" fill="#B0E0E6" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.5 12c1.38 0 2.5 1.12 2.5 2.5S19.88 17 18.5 17H6.5C4.57 17 3 15.43 3 13.5S4.57 10 6.5 10c.28 0 .5-.22.5-.5C7 6.36 9.36 4 12.5 4S18 6.36 18 9.5c0 .28.22.5.5.5z" />
         </svg>
 
-        <svg className="icon icon-sparkle icon-3" viewBox="0 0 24 24" fill="#FFECB3" xmlns="http://www.w3.org/2000/svg">
+        <svg className="icon icon-sparkle icon-3" viewBox="0 0 24 24" fill="#FFD1DC" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2l1.5 3.5L17 7l-3.5 1L12 12l-1.5-4L7 7l3.5-1L12 2z" />
         </svg>
 
-        <svg className="icon icon-star icon-4" viewBox="0 0 24 24" fill="#ede97b" xmlns="http://www.w3.org/2000/svg">
+        <svg className="icon icon-star icon-4" viewBox="0 0 24 24" fill="#CDB4DB" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z" />
         </svg>
 
