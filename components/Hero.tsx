@@ -145,7 +145,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
           {/* Animated GIF */}
           <div className="absolute -top-10 right-6 w-20 h-20 sm:w-24 sm:h-24 object-contain animate-bounce-slow">
             <Image
-              src="/assets/intro-DzUiguR4.webp"
+              src="public/assets/intro-DzUiguR4.webp"
               alt="Decorative princess day animation"
               width={96}
               height={96}
