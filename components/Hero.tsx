@@ -162,12 +162,12 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               <span className="w-3.5 h-3.5 rounded-full bg-[#fff07a] border border-[#f0cf52]"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-[#b1f2b1] border border-[#92d992]"></span>
             </div>
-            <p className="text-sm font-bold text-[#9a4c73] flex items-center gap-1">
-              A Note for You
+            <p className="text-sm font-bold text-[#d1b61f] flex items-center gap-1">
+              a gift and a note for my cutiee baby
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 21s-6-4.35-8.5-6.5C1.85 12.73 3 9 6 8c2.28-.75 3.5 1 6 1s3.72-1.75 6-1c3 1 4.15 4.73 2.5 6.5C18 16.65 12 21 12 21z"
-                  fill="#f04299"
+                  fill="#ffda0d"
                 />
               </svg>
             </p>
@@ -182,7 +182,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Hey Princess! 💕
+               Princess! 💕
             </motion.h1>
 
             <motion.div
