@@ -111,9 +111,9 @@ a {
   inset: 0;
   pointer-events: none;
   z-index: 2;
-  background-image:
-    linear-gradient(rgba(253, 224, 71, 0.1) 1px, transparent 1px),
-    linear-gradient(to right, rgba(234, 179, 8, 0.08) 1px, transparent 1px);
+background-image:
+    linear-gradient(rgba(250, 204, 21, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(250, 204, 21, 0.08) 1px, transparent 1px);
   background-size: 30px 30px;
   opacity: 0.7;
 }
@@ -571,9 +571,9 @@ a {
 
 /* Grid Paper Background updated to Yellow */
 .grid-paper {
-  background-image:
-    linear-gradient(rgba(253, 224, 71, 0.1) 1px, transparent 1px),
-    linear-gradient(to right, rgba(234, 179, 8, 0.08) 1px, transparent 1px);
+background-image:
+    linear-gradient(rgba(250, 204, 21, 0.08) 1px, transparent 1px),
+    linear-gradient(to right, rgba(250, 204, 21, 0.05) 1px, transparent 1px);
   background-size: 22px 22px;
   background-color: transparent;
   opacity: 0.95;
