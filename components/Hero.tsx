@@ -195,10 +195,10 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
                 {"To celebrate three months of us, I wanted to create a little space just for you. tho it's not much but I wanted to make something from the heart to remind you of how much you truly damn mean to me 🥹"}
               </p>
               <p className="pt-3">
-                <span className="font-semibold text-[#faec4d]">
+                <span className="font-semibold text-[#a89e28]">
                   Go ahead baby, this is all for you ⭐
                 </span>
-                <span className="inline-block w-1.5 h-4 bg-[#f0e141]/70 ml-1 animate-cursor"></span>
+                <span className="inline-block w-1.5 h-4 bg-[#877e0c]/70 ml-1 animate-cursor"></span>
               </p>
             </motion.div>
 
