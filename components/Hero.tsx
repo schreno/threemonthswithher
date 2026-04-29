@@ -162,7 +162,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               <span className="w-3.5 h-3.5 rounded-full bg-[#fff07a] border border-[#f0cf52]"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-[#b1f2b1] border border-[#92d992]"></span>
             </div>
-            <p className="text-sm font-bold text-[#d1b61f] flex items-center gap-1">
+            <p className="text-sm font-bold text-[#c7a906] flex items-center gap-1">
               a gift and a note for my cutiee baby
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path
@@ -177,12 +177,12 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
           {/* Content */}
           <div className="text-center space-y-6 relative">
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1b0d14] leading-snug"
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-[#54470c] leading-snug"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-               Princess! 💕
+              HAPPYYY THREE MONTH MONTHSARRY BABYY 🌻💛
             </motion.h1>
 
             <motion.div
@@ -192,8 +192,9 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               transition={{ delay: 0.4 }}
             >
               <p>
-                I Wanted to do something special for you, for this princess day,
-                so I made something special just for you...
+                To celebrate three months of us, I wanted to create a little space just for you.
+                tho it's not much but I wanted to make something from the heart to remind you of how 
+                much you truly damn mean to me 🥹
               </p>
               <p className="pt-3">
                 <span className="font-semibold text-[#f04299]">
