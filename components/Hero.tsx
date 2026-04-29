@@ -192,9 +192,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               transition={{ delay: 0.4 }}
             >
               <p>
-                To celebrate three months of us, I wanted to create a little space just for you.
-                tho it's not much but I wanted to make something from the heart to remind you of how 
-                much you truly damn mean to me 🥹
+                {"To celebrate three months of us, I wanted to create a little space just for you. tho it's not much but I wanted to make something from the heart to remind you of how much you truly damn mean to me 🥹"}
               </p>
               <p className="pt-3">
                 <span className="font-semibold text-[#f04299]">
