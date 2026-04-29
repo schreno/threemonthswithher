@@ -131,7 +131,7 @@ background-image:
 .icon {
   position: absolute;
   opacity: 0.85;
-  filter: drop-shadow(0 4px 12px rgba(255, 182, 193, 0.15));
+  filter: drop-shadow(0 4px 12px rgba(234, 179, 8, 0.2)); /* Swapped to Yellow */
   transform-origin: center;
 }
 
@@ -175,7 +175,7 @@ background-image:
   position: absolute;
   font-size: 24px;
   opacity: 0.6;
-  filter: drop-shadow(0 2px 8px rgba(255, 182, 193, 0.2));
+  filter: drop-shadow(0 2px 8px rgba(234, 179, 8, 0.3)); /* Swapped to Yellow */
 }
 
 .heart-1 {
@@ -661,7 +661,7 @@ background-image:
   background: radial-gradient(
     circle at 30% 30%,
     rgba(255, 255, 255, 0.95),
-    rgba(255, 255, 255, 0.6) 40%,
+    rgba(253, 224, 71, 0.6) 40%, /* Swapped to Yellow */
     transparent 60%
   );
   border-radius: 50%;
