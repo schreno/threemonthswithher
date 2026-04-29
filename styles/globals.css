@@ -5,10 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --bg: #fff9ff;
-  --primary: #ffb6e6;
-  --accent: #ffd8a8;
-  --text: #2d2d2d;
+  /* Yellow Theme Palette */
+  --bg: #fffdf2;           /* Very faint cream yellow */
+  --primary: #fde047;      /* Bright princess yellow */
+  --accent: #fef08a;       /* Soft yellow */
+  --text: #423f2d;         /* Warm dark grey/brown for better contrast on yellow */
   --font-sans:
     'Plus Jakarta Sans', 'Poppins', system-ui, -apple-system, sans-serif;
   --font-display: 'Comfortaa', 'Poppins', system-ui, sans-serif;
@@ -41,26 +42,26 @@ a {
   background:
     radial-gradient(
       circle at 20% 80%,
-      rgba(255, 182, 193, 0.3) 0%,
+      rgba(253, 224, 71, 0.2) 0%, /* Yellow glow */
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(255, 240, 245, 0.4) 0%,
+      rgba(254, 249, 195, 0.4) 0%, /* Cream glow */
       transparent 50%
     ),
     radial-gradient(
       circle at 40% 40%,
-      rgba(176, 224, 230, 0.2) 0%,
+      rgba(255, 215, 0, 0.1) 0%, /* Gold glow */
       transparent 50%
     ),
     linear-gradient(
       135deg,
-      #fff8e7 0%,
-      #fff4f8 25%,
-      #f0f8ff 50%,
-      #fff0f5 75%,
-      #fffacd 100%
+      #fffdf2 0%,
+      #fefce8 25%,
+      #fef9c3 50%,
+      #fef08a 75%,
+      #fde68a 100%
     );
   z-index: 0;
 }
@@ -80,8 +81,8 @@ a {
   height: 4px;
   background: radial-gradient(
     circle,
-    rgba(255, 182, 193, 0.6),
-    rgba(255, 182, 193, 0.2)
+    rgba(253, 224, 71, 0.6), /* Yellow */
+    rgba(253, 224, 71, 0.2)
   );
   border-radius: 50%;
   animation: floatParticle linear infinite;
@@ -111,11 +112,12 @@ a {
   pointer-events: none;
   z-index: 2;
   background-image:
-    linear-gradient(rgba(255, 182, 193, 0.08) 1px, transparent 1px),
-    linear-gradient(to right, rgba(240, 66, 153, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(253, 224, 71, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(234, 179, 8, 0.08) 1px, transparent 1px);
   background-size: 30px 30px;
   opacity: 0.7;
 }
+
 
 /* Background icons */
 .bg-icons {
@@ -567,11 +569,11 @@ a {
   }
 }
 
-/* Grid Paper Background */
+/* Grid Paper Background updated to Yellow */
 .grid-paper {
   background-image:
-    linear-gradient(rgba(205, 180, 219, 0.06) 1px, transparent 1px),
-    linear-gradient(to right, rgba(240, 66, 153, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(253, 224, 71, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(234, 179, 8, 0.08) 1px, transparent 1px);
   background-size: 22px 22px;
   background-color: transparent;
   opacity: 0.95;
