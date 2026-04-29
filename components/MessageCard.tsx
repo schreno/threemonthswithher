@@ -310,13 +310,13 @@ export default function MessageCard({
                         typewriterComplete.love &&
                         typewriterComplete.stamped && (
                           <div className="flex justify-center mt-6 animate-slideUp">
-                           <motion.button
-                              onClick={onOpenGift}
-                              className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFD700] text-[#54470C] font-bold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-400/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              Keep going, baby.. 🌻
+                          <motion.button
+                            onClick={() => setShowPlaylist(true)} 
+                            className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFD700] text-[#54470C] font-bold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-400/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                                Keep going, baby.. 🌻
                             </motion.button>
                           </div>
                         )}
