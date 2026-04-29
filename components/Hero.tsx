@@ -195,16 +195,16 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
                 {"To celebrate three months of us, I wanted to create a little space just for you. tho it's not much but I wanted to make something from the heart to remind you of how much you truly damn mean to me 🥹"}
               </p>
               <p className="pt-3">
-                <span className="font-semibold text-[#f04299]">
-                  Click below to see what it is! ✨
+                <span className="font-semibold text-[#faec4d]">
+                  Go ahead baby, this is all for you ⭐
                 </span>
-                <span className="inline-block w-1.5 h-4 bg-[#f04299]/70 ml-1 animate-cursor"></span>
+                <span className="inline-block w-1.5 h-4 bg-[#f0e141]/70 ml-1 animate-cursor"></span>
               </p>
             </motion.div>
 
-            <motion.button
+           <motion.button
               onClick={onOpenGift}
-              className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300 cursor-pointer"
+              className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFD700] text-[#54470C] font-bold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-400/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -212,9 +212,9 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               whileTap={{ scale: 0.95 }}
               aria-label="Open my heart"
             >
-              Open My Heart 💖
+              Open My Heart 🌻
             </motion.button>
-
+            
             {/* Decorative element */}
             <div
               className="absolute -bottom-6 -left-4 animate-float-slow opacity-70 pointer-events-none"
