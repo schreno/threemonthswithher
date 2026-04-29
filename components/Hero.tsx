@@ -11,12 +11,12 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
+  // Logic for particles preserved exactly
   const [particles, setParticles] = useState<
     Array<{ left: number; top: number; delay: number; duration: number }>
   >([]);
 
   useEffect(() => {
-    // Generate floating particles
     const newParticles = Array.from({ length: 15 }, () => ({
       left: Math.random() * 100,
       top: Math.random() * 100,
@@ -33,7 +33,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
       {/* Dreamy background */}
       <div className="dreamy-bg" />
 
-      {/* Floating particles */}
+      {/* Floating particles preserved */}
       <div className="floating-particles" aria-hidden="true">
         {particles.map((particle, i) => (
           <div
@@ -52,98 +52,55 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
       {/* Grid overlay */}
       <div className="grid-overlay" aria-hidden="true" />
 
-      {/* Background icons */}
+      {/* Background icons preserved - Swapped pink emoji/colors to yellow */}
       <div className="bg-icons" aria-hidden="true">
-        {/* Star 1 */}
-        <svg
-          className="icon icon-star icon-1"
-          viewBox="0 0 24 24"
-          fill="#FFF7A1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg className="icon icon-star icon-1" viewBox="0 0 24 24" fill="#FFF7A1" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z" />
         </svg>
 
-        {/* Cloud */}
-        <svg
-          className="icon icon-cloud icon-2"
-          viewBox="0 0 24 24"
-          fill="#B0E0E6"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg className="icon icon-cloud icon-2" viewBox="0 0 24 24" fill="#B0E0E6" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.5 12c1.38 0 2.5 1.12 2.5 2.5S19.88 17 18.5 17H6.5C4.57 17 3 15.43 3 13.5S4.57 10 6.5 10c.28 0 .5-.22.5-.5C7 6.36 9.36 4 12.5 4S18 6.36 18 9.5c0 .28.22.5.5.5z" />
         </svg>
 
-        {/* Sparkle */}
-        <svg
-          className="icon icon-sparkle icon-3"
-          viewBox="0 0 24 24"
-          fill="#FFD1DC"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        {/* Changed sparkle fill to a light golden yellow */}
+        <svg className="icon icon-sparkle icon-3" viewBox="0 0 24 24" fill="#FFECB3" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2l1.5 3.5L17 7l-3.5 1L12 12l-1.5-4L7 7l3.5-1L12 2z" />
         </svg>
 
-        {/* Star 4 */}
-        <svg
-          className="icon icon-star icon-4"
-          viewBox="0 0 24 24"
-          fill="#CDB4DB"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg className="icon icon-star icon-4" viewBox="0 0 24 24" fill="#CDB4DB" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z" />
         </svg>
 
-        <div className="heart-1">💕</div>
-        <div className="heart-2">💖</div>
+        <div className="heart-1">🌻</div>
+        <div className="heart-2">☀️</div>
         <div className="sparkle-text-1">✨</div>
         <div className="sparkle-text-2">🌸</div>
       </div>
 
       {/* Main content */}
       <div className="page-container relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 md:px-10">
-        {/* Decorative floating elements */}
-        <svg
-          className="absolute top-10 left-10 w-12 h-12 animate-float-slow"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z"
-            fill="#FFF7A1"
-          />
+        
+        {/* Floating elements preserved - changed pink heart fill to yellow */}
+        <svg className="absolute top-10 left-10 w-12 h-12 animate-float-slow" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z" fill="#FFF7A1" />
         </svg>
 
-        <svg
-          className="absolute right-12 top-16 w-16 h-16 opacity-80 animate-float"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M20 17.58A4.42 4.42 0 0115.58 22H7.42A4.42 4.42 0 013 17.58 4.5 4.5 0 017.5 13H8a5 5 0 019.9-1.2A3.5 3.5 0 0120 17.58z"
-            fill="#B0E0E6"
-          />
+        <svg className="absolute right-12 top-16 w-16 h-16 opacity-80 animate-float" viewBox="0 0 24 24" fill="none">
+          <path d="M20 17.58A4.42 4.42 0 0115.58 22H7.42A4.42 4.42 0 013 17.58 4.5 4.5 0 017.5 13H8a5 5 0 019.9-1.2A3.5 3.5 0 0120 17.58z" fill="#B0E0E6" />
         </svg>
 
-        <svg
-          className="absolute left-12 bottom-20 w-10 h-10 animate-float-slow"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M12 21s-6-4.35-8.5-6.5C1.85 12.73 3 9 6 8c2.28-.75 3.5 1 6 1s3.72-1.75 6-1c3 1 4.15 4.73 2.5 6.5C18 16.65 12 21 12 21z"
-            fill="#FFD1DC"
-          />
+        <svg className="absolute left-12 bottom-20 w-10 h-10 animate-float-slow" viewBox="0 0 24 24" fill="none">
+          <path d="M12 21s-6-4.35-8.5-6.5C1.85 12.73 3 9 6 8c2.28-.75 3.5 1 6 1s3.72-1.75 6-1c3 1 4.15 4.73 2.5 6.5C18 16.65 12 21 12 21z" fill="#FFE082" />
         </svg>
 
-        {/* Main card */}
+        {/* Main card - Changed border color to yellow-200 */}
         <motion.div
-          className="relative w-full max-w-2xl bg-[#FFF8E7] rounded-2xl shadow-lg border border-pink-200 p-6 sm:p-8 md:p-10 z-10 animate-fadeIn mx-auto"
+          className="relative w-full max-w-2xl bg-[#FFF8E7] rounded-2xl shadow-lg border border-yellow-200 p-6 sm:p-8 md:p-10 z-10 animate-fadeIn mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Animated GIF */}
+          {/* Image using import fix */}
           <div className="absolute -top-10 right-6 w-20 h-20 sm:w-24 sm:h-24 object-contain animate-bounce-slow">
             <Image
               src={introGif} 
@@ -155,26 +112,22 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
             />
           </div>
 
-          {/* Window controls */}
-          <div className="flex items-center justify-between border-b border-pink-200 pb-3 mb-6">
+          {/* Window controls - Changed divider to yellow-200 */}
+          <div className="flex items-center justify-between border-b border-yellow-200 pb-3 mb-6">
             <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded-full bg-[#ff9ec7] border border-[#f081a9]"></span>
+              <span className="w-3.5 h-3.5 rounded-full bg-[#FFD54F] border border-[#FFB300]"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-[#fff07a] border border-[#f0cf52]"></span>
               <span className="w-3.5 h-3.5 rounded-full bg-[#b1f2b1] border border-[#92d992]"></span>
             </div>
             <p className="text-sm font-bold text-[#c7a906] flex items-center gap-1">
               a gift and a note for my cutiee baby
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 21s-6-4.35-8.5-6.5C1.85 12.73 3 9 6 8c2.28-.75 3.5 1 6 1s3.72-1.75 6-1c3 1 4.15 4.73 2.5 6.5C18 16.65 12 21 12 21z"
-                  fill="#ffda0d"
-                />
+                <path d="M12 21s-6-4.35-8.5-6.5C1.85 12.73 3 9 6 8c2.28-.75 3.5 1 6 1s3.72-1.75 6-1c3 1 4.15 4.73 2.5 6.5C18 16.65 12 21 12 21z" fill="#ffda0d" />
               </svg>
             </p>
             <div className="w-16"></div>
           </div>
 
-          {/* Content */}
           <div className="text-center space-y-6 relative">
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl font-black text-[#54470c] leading-snug"
@@ -195,27 +148,24 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
                 {"To celebrate three months of us, I wanted to create a little space just for you. tho it's not much but I wanted to make something from the heart to remind you of how much you truly damn mean to me 🥹"}
               </p>
               <p className="pt-3">
-                <span className="font-semibold text-[#a89e28]">
+                {/* Highlight text and cursor to gold/yellow */}
+                <span className="font-semibold text-[#b39500]">
                   Go ahead baby, this is all for you ⭐
                 </span>
-                <span className="inline-block w-1.5 h-4 bg-[#877e0c]/70 ml-1 animate-cursor"></span>
+                <span className="inline-block w-1.5 h-4 bg-[#FFD700]/70 ml-1 animate-cursor"></span>
               </p>
             </motion.div>
 
            <motion.button
               onClick={onOpenGift}
               className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFD700] text-[#54470C] font-bold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-400/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              aria-label="Open my heart"
             >
               Open My Heart 🌻
             </motion.button>
             
-            {/* Decorative element */}
+            {/* Decorative princess preserved */}
             <div
               className="absolute -bottom-6 -left-4 animate-float-slow opacity-70 pointer-events-none"
               style={{ transform: 'rotate(-15deg)', zIndex: 20 }}
@@ -231,8 +181,9 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
           </div>
         </motion.div>
 
-        <div className="mt-8 text-xs text-[#9a4c73] text-center">
-          Made with love, only for you 💕
+        {/* Footer color changed to a golden brown */}
+        <div className="mt-8 text-xs text-[#8a7610] text-center">
+          Made with love, only for you 🌻
         </div>
       </div>
     </div>
