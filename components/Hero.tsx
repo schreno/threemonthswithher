@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import introGif from '@/public/assets/intro-DzUiguR4.webp';
 
 interface HeroProps {
   onOpenGift: () => void;
@@ -145,13 +146,12 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
           {/* Animated GIF */}
           <div className="absolute -top-10 right-6 w-20 h-20 sm:w-24 sm:h-24 object-contain animate-bounce-slow">
             <Image
-              src="/assets/intro-DzUiguR4.webp"
+              src={introGif} 
               alt="Decorative princess day animation"
               width={96}
               height={96}
               className="w-full h-full object-contain"
               priority
-              sizes="(max-width: 640px) 80px, 96px"
             />
           </div>
 
