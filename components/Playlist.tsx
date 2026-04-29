@@ -228,77 +228,82 @@ export default function Playlist({ onContinue }: PlaylistProps) {
           </div>
         </div>
 
-        {/* Playlist Container */}
-        <div className="bg-[#FEFCE8] rounded-2xl p-4 sm:p-5 md:p-6 border border-yellow-200 shadow-md animate-fadeIn mx-auto">
-          {/* Music Player */}
-          {currentTrackData ? (
-            <div className="mb-6 flex items-center gap-4 p-3 rounded-lg bg-white/70 border border-yellow-100 shadow-sm max-w-lg w-full mx-auto">
-              <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm">
-                <Image
-                  src={currentTrackData.image}
-                  alt={currentTrackData.title}
-                  fill
-                  className="object-cover"
-                  sizes="48px"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-lg opacity-30 pointer-events-none">
-                  🎵
-                </div>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold text-[#422006] truncate">
-                  {currentTrackData.title}
-                </div>
-                <div className="text-xs text-[#854D0E] mb-2 truncate">
-                  {currentTrackData.description}
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs text-[#854D0E] w-8 text-left">
-                    {formatTime(currentTime)}
-                  </span>
-                  <input
-                    type="range"
-                    min="0"
-                    max={duration || 0}
-                    value={currentTime}
-                    onChange={handleSeek}
-                    className="flex-1 h-1 accent-[#EAB308] appearance-none bg-yellow-100 rounded-full cursor-pointer"
-                    style={{
-                      background: `linear-gradient(to right, #EAB308 0%, #EAB308 ${(currentTime / (duration || 1)) * 100}%, #FEF9C3 ${(currentTime / (duration || 1)) * 100}%, #FEF9C3 100%)`,
-                    }}
-                  />
-                  <span className="text-xs text-[#854D0E] w-8 text-right">
-                    {formatTime(duration)}
-                  </span>
-                </div>
-              </div>
-              <button
-                onClick={handlePlayPause}
-                className="w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all transform bg-white text-[#A16207] border border-yellow-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-yellow-300 cursor-pointer"
-                aria-label={isPlaying ? 'Pause' : 'Play'}
-              >
-                {isPlaying ? (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <rect x="6" y="4" width="4" height="16" fill="currentColor" />
-                    <rect x="14" y="4" width="4" height="16" fill="currentColor" />
-                  </svg>
-                ) : (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5v14l11-7z" fill="currentColor" />
-                  </svg>
-                )}
-              </button>
-            </div>
-          ) : (
-            <div className="mb-6 h-20 flex items-center justify-center">
-              <div className="text-base text-[#854D0E] font-medium text-center">
-                Choose a track to start vibing ✨
-              </div>
-            </div>
-          )}
+       {/* Music Player */}
+{currentTrackData ? (
+  <div className="mb-6 flex items-center gap-4 p-3 rounded-lg bg-white/70 border border-yellow-100 shadow-sm max-w-lg w-full mx-auto">
+    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm">
+      <Image
+        src={currentTrackData.image}
+        alt={currentTrackData.title}
+        fill
+        className="object-cover"
+        sizes="48px"
+        // Ensure the fallback is centered and visible if image fails
+        onError={(e) => {
+          e.currentTarget.style.opacity = '0';
+        }}
+      />
+      <div className="absolute inset-0 flex items-center justify-center text-lg bg-yellow-50/50">
+        🎵
+      </div>
+    </div>
+
+    <div className="flex-1 min-w-0">
+      {/* Updated Text Labels */}
+      <div className="text-sm font-bold text-[#422006] truncate">
+        {currentTrackData.title}
+      </div>
+      <div className="text-xs text-[#854D0E] mb-2 truncate">
+        {currentTrackData.description}
+      </div>
+
+      {/* Interactive Slider */}
+      <div className="flex items-center gap-2">
+        <span className="text-[10px] text-[#854D0E] w-7 tabular-nums">
+          {formatTime(currentTime)}
+        </span>
+        <input
+          type="range"
+          min="0"
+          max={duration || 0}
+          value={currentTime}
+          step="0.1"
+          onChange={handleSeek}
+          className="flex-1 h-1.5 accent-[#EAB308] appearance-none bg-yellow-100 rounded-full cursor-pointer overflow-hidden"
+          style={{
+            background: `linear-gradient(to right, #EAB308 0%, #EAB308 ${(currentTime / (duration || 1)) * 100}%, #FEF9C3 ${(currentTime / (duration || 1)) * 100}%, #FEF9C3 100%)`,
+          }}
+        />
+        <span className="text-[10px] text-[#854D0E] w-7 tabular-nums text-right">
+          {formatTime(duration)}
+        </span>
+      </div>
+    </div>
+
+    <button
+      onClick={handlePlayPause}
+      className="w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all transform bg-white text-[#A16207] border border-yellow-200 hover:scale-110 active:scale-95 cursor-pointer"
+      aria-label={isPlaying ? 'Pause' : 'Play'}
+    >
+      {isPlaying ? (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="6" y="4" width="4" height="16" />
+          <rect x="14" y="4" width="4" height="16" />
+        </svg>
+      ) : (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      )}
+    </button>
+  </div>
+) : (
+  <div className="mb-6 h-20 flex items-center justify-center">
+    <div className="text-base text-[#854D0E] font-medium text-center">
+      Choose a track to start vibing ✨
+    </div>
+  </div>
+)}
 
           {/* Carousel */}
           <div className="mb-8">
