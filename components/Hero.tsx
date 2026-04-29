@@ -182,7 +182,7 @@ export default function Hero({ onOpenGift, isGiftOpened }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              HAPPYYY THREE MONTH MONTHSARRY BABYY 🌻💛
+              HAPPY 3RD MONTHSARRY BABYY 🌻💛
             </motion.h1>
 
             <motion.div
