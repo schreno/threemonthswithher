@@ -314,7 +314,8 @@ export default function MessageCard({
                               onClick={() => setShowPlaylist(true)}
                               className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFC107] text-[#2C2500] font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-300/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
                             >
-                              Continue To See More ✨
+                                className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFD700] text-[#54470C] font-bold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-400/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
+
                             </button>
                           </div>
                         )}
