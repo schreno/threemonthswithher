@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, memo, useMemo } from 'react';
+import { useState, useRef, useEffect, memo, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { showToast } from '@/lib/toast';
@@ -63,7 +63,7 @@ const tracks: Track[] = [
   {
     id: 7,
     title: "Seasons",
-    description: "I'll give you all my life, my seasons. By your side, I’ll be your seasons. ☀️💛",
+    description: "I'll give you all my life, my seasons. By your side, I'll be your seasons. ☀️💛",
     image: "/assets/rideyourwave.gif",
     audio: "/assets/rideyourwave-song.mp3"
   }
@@ -99,14 +99,19 @@ export default function Playlist({ onContinue }: PlaylistProps) {
   const audioRefs = useRef<{ [key: number]: HTMLAudioElement | null }>({});
   const progressRef = useRef<HTMLInputElement>(null);
 
-  const checkScrollButtons = () => {
+  // Drag-to-scroll state
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollStartLeft, setScrollStartLeft] = useState(0);
+  const dragRef = useRef(false);
+
+  const checkScrollButtons = useCallback(() => {
     if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } =
-        scrollContainerRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
     }
-  };
+  }, []);
 
   useEffect(() => {
     checkScrollButtons();
@@ -115,7 +120,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
       container.addEventListener('scroll', checkScrollButtons);
       return () => container.removeEventListener('scroll', checkScrollButtons);
     }
-  }, []);
+  }, [checkScrollButtons]);
 
   useEffect(() => {
     if (currentTrack) {
@@ -139,7 +144,6 @@ export default function Playlist({ onContinue }: PlaylistProps) {
           }
         };
 
-        // Set initial duration if already loaded
         if (audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
           setDuration(audio.duration);
         }
@@ -165,7 +169,6 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     }
   }, [currentTrack]);
 
-  // Update progress bar fill color
   const updateProgressStyle = (time: number, dur: number) => {
     if (progressRef.current && dur && dur > 0) {
       const percent = (time / dur) * 100;
@@ -173,7 +176,6 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     }
   };
 
-  // Update progress style when duration changes
   useEffect(() => {
     if (duration > 0) {
       updateProgressStyle(currentTime, duration);
@@ -192,7 +194,36 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     }
   };
 
+  // Drag to scroll handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    dragRef.current = false;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollStartLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    dragRef.current = true;
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    scrollContainerRef.current.scrollLeft = scrollStartLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
   const handleTrackClick = async (trackId: number) => {
+    // If user was dragging, don't trigger click
+    if (dragRef.current) return;
+
     Object.values(audioRefs.current).forEach((audio) => {
       if (audio && audio !== audioRefs.current[trackId]) {
         audio.pause();
@@ -389,7 +420,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
               <button
                 onClick={scrollLeft}
                 disabled={!canScrollLeft}
-                className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
+                className={`absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
                   canScrollLeft
                     ? 'text-[#A16207] hover:bg-yellow-50 cursor-pointer'
                     : 'text-gray-300 cursor-not-allowed'
@@ -411,7 +442,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
               <button
                 onClick={scrollRight}
                 disabled={!canScrollRight}
-                className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
+                className={`absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
                   canScrollRight
                     ? 'text-[#A16207] hover:bg-yellow-50 cursor-pointer'
                     : 'text-gray-300 cursor-not-allowed'
@@ -429,16 +460,22 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                 </svg>
               </button>
 
-              {/* Tracks Container */}
+              {/* Tracks Container - pointer-events-none so arrows stay clickable */}
               <div
                 ref={scrollContainerRef}
-                className="flex gap-4 overflow-x-auto scrollbar-hide px-14 py-2 justify-start"
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseLeave}
+                className={`flex gap-4 overflow-x-auto scrollbar-hide px-12 py-2 justify-start select-none ${
+                  isDragging ? 'cursor-grabbing' : 'cursor-grab'
+                }`}
                 style={{ scrollbarWidth: 'none' }}
               >
                 {tracks.map((track) => (
                   <div
                     key={track.id}
-                    className={`group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 h-full hover:scale-105 hover:z-10 ${
+                    className={`group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 h-full hover:scale-105 hover:z-10 pointer-events-auto ${
                       currentTrack === track.id
                         ? 'ring-2 ring-[#EAB308] ring-offset-2 rounded-xl'
                         : ''
