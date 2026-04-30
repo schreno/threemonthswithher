@@ -50,21 +50,21 @@ const tracks: Track[] = [
     id: 5,
     title: "Blue",
     description: "Remember talking about this while we were on roblox? Now every time I hear it, I just picture us by the waves. 🌊💙💛",    
-    image: "/assets/rideyourwave.gif",
+    image: "/assets/blue.gif",
     audio: "/assets/blue-song.mp3"
   },
   {
     id: 6,
     title: "Yellow",
     description: "Look how the stars shine for you, and everything is yellow. Just like the sunflowers. 🌻✨",
-    image: "/assets/rideyourwave.gif",
+    image: "/assets/yellow.gif",
     audio: "/assets/yellow-song.mp3"
   },
   {
     id: 7,
     title: "Seasons",
     description: "I'll give you all my life, my seasons. By your side, I'll be your seasons. ☀️💛",
-    image: "/assets/rideyourwave.gif",
+    image: "/assets/wte.jpg",
     audio: "/assets/wte-song.mp3"
   }
 ];
