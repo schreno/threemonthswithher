@@ -20,10 +20,10 @@ interface Track {
 const tracks: Track[] = [
   {
     id: 1,
-    "title": "Mahika",
-    "description": "You told me this was your favorite andddd now it's ours 🥹. Your mahika, forever always baby 🌻🥰",
-    "image": "/assets/mahika.gif",
-    "audio": "/assets/mahika-song.mp3"
+    title: "Mahika",
+    description: "You told me this was your favorite andddd now it's ours 🥹. Your mahika, forever always baby 🌻🥰",
+    image: "/assets/mahika.gif",
+    audio: "/assets/mahika-song.mp3"
   },
   {
     id: 2,
@@ -33,12 +33,41 @@ const tracks: Track[] = [
     audio: '/assets/rideyourwave-song.mp3',
   },
   {
-    id: 3,
-    title: 'Dil ka Jo Haal hai',
-    description: 'Tu Kaare Dil Bekarar 💞',
-    image: '/assets/music3.png',
-    audio: '/assets/music3-ClPh4k2q.mp3',
+    "id": 3,
+    "title": "High School Sweethearts",
+    "description": "Honestly, distance is just a test to see how far love can travel baby. My high school sweetheart, no matter the miles ✈️🥰🌎",
+    image: '/assets/rideyourwave.gif',
+    audio: '/assets/rideyourwave-song.mp3',
   },
+  {
+    "id": 4,
+    "title": "Ang Pag-ibig ay Kanibalismo",
+    "description": "Magdodroga tayo... kimi lang, bawal 'yon. Ikaw lang sapat na, hehe 🤤😋",
+    image: '/assets/rideyourwave.gif',
+    audio: '/assets/rideyourwave-song.mp3',0
+  },
+  {
+    "id": 5,
+    "title": "Blue",
+    "description": "Remember talking about this while we were on roblox? Now every time I hear it, I just picture us by the waves. 🌊💙💛",    
+    image: '/assets/rideyourwave.gif',
+    audio: '/assets/rideyourwave-song.mp3',
+  },
+  {
+    "id": 6,
+    "title": "Yellow",
+    "description": "Look how the stars shine for you, and everything is yellow. Just like the sunflowers. 🌻✨",
+    image: '/assets/rideyourwave.gif',
+    audio: '/assets/rideyourwave-song.mp3',
+  },
+
+  {
+    "id": 7,
+    "title": "Seasons",
+    "description": "I'll give you all my life, my seasons. By your side, I’ll be your seasons. ☀️💛",
+    image: '/assets/rideyourwave.gif',
+    audio: '/assets/rideyourwave-song.mp3',
+  }
 ];
 
 // Memoized image component - won't re-render when parent state changes
