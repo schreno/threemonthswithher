@@ -521,7 +521,6 @@ a {
   cursor: pointer;
   border: 2px solid #FEF9C3;
   box-shadow: 0 1px 4px rgba(234, 179, 8, 0.4);
-  margin-top: -5px;
 }
 
 .music-slider::-moz-range-thumb {
