@@ -319,7 +319,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                     step="0.1"
                     value={currentTime}
                     onChange={handleSeek}
-                    className="flex-1 h-1.5 rounded-full cursor-pointer appearance-none bg-[#FEF9C3]"
+                    className="music-slider flex-1 h-1.5 rounded-full cursor-pointer appearance-none bg-[#FEF9C3]"
                     style={{
                       background: `linear-gradient(to right, #EAB308 0%, #EAB308 ${duration > 0 ? (currentTime / duration) * 100 : 0}%, #FEF9C3 ${duration > 0 ? (currentTime / duration) * 100 : 0}%, #FEF9C3 100%)`,
                     }}
