@@ -42,13 +42,15 @@ const tracks: Track[] = [
 ];
 
 // Memoized image component - won't re-render when parent state changes
-const StableImage = memo(({ src, alt }: { src: string; alt: string }) => (
+const StableImage = memo(({ src, alt, isActive }: { src: string; alt: string; isActive: boolean }) => (
   <Image
     src={src}
     alt={alt}
     fill
     unoptimized
-    className="object-cover"
+    className={`object-cover transition-all duration-700 ease-out ${
+      isActive ? 'grayscale-0 saturate-100 brightness-100' : 'grayscale-[0.6] saturate-[0.3] brightness-[0.85]'
+    }`}
     sizes="48px"
     onError={(e) => {
       e.currentTarget.style.display = 'none';
@@ -192,7 +194,6 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // useMemo so this only recalculates when currentTrack ID changes, not on every time update
   const currentTrackData = useMemo(
     () => (currentTrack ? tracks.find((t) => t.id === currentTrack) : null),
     [currentTrack]
@@ -256,6 +257,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                 <StableImage
                   src={currentTrackData.image}
                   alt={currentTrackData.title}
+                  isActive={true}
                 />
                 <div className="absolute inset-0 flex items-center justify-center text-lg opacity-30 pointer-events-none">
                   🎵
@@ -382,6 +384,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                           <StableImage
                             src={track.image}
                             alt={track.title}
+                            isActive={currentTrack === track.id}
                           />
                           <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 pointer-events-none">
                             🎵
