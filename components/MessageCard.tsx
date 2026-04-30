@@ -273,7 +273,7 @@ export default function MessageCard({
                               know that you are the most precious person in my
                               life. Every day with you is a gift, and I&apos;m
                               grateful for every second we share together. You
-                              make me want to be the best version of myself.
+                              make me want to be the best version of myself
                             </div>
                             <div className="mt-8 ml-auto w-fit">
                               <div className="font-medium text-[#8B7300]">
