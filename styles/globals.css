@@ -511,6 +511,29 @@ a {
   animation: music-bar-3 1s ease-in-out infinite;
 }
 
+.music-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #EAB308;
+  cursor: pointer;
+  border: 2px solid #FEF9C3;
+  box-shadow: 0 1px 4px rgba(234, 179, 8, 0.4);
+  margin-top: -5px;
+}
+
+.music-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #EAB308;
+  cursor: pointer;
+  border: 2px solid #FEF9C3;
+  box-shadow: 0 1px 4px rgba(234, 179, 8, 0.4);
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
