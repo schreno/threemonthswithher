@@ -69,6 +69,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const audioRefs = useRef<{ [key: number]: HTMLAudioElement | null }>({});
+  const progressRef = useRef<HTMLInputElement>(null);
 
   const checkScrollButtons = () => {
     if (scrollContainerRef.current) {
@@ -92,19 +93,39 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     if (currentTrack) {
       const audio = audioRefs.current[currentTrack];
       if (audio) {
-        const updateTime = () => setCurrentTime(audio.currentTime);
-        const updateDuration = () => setDuration(audio.duration);
+        const updateTime = () => {
+          setCurrentTime(audio.currentTime);
+          updateProgressStyle(audio.currentTime, audio.duration);
+        };
+        const updateDuration = () => {
+          if (audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
+            setDuration(audio.duration);
+          }
+        };
         const handlePlay = () => setIsPlaying(true);
         const handlePause = () => setIsPlaying(false);
+        const handleLoadedMetadata = () => {
+          if (audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
+            setDuration(audio.duration);
+            updateProgressStyle(audio.currentTime, audio.duration);
+          }
+        };
+
+        // Set initial duration if already loaded
+        if (audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
+          setDuration(audio.duration);
+        }
 
         audio.addEventListener('timeupdate', updateTime);
-        audio.addEventListener('loadedmetadata', updateDuration);
+        audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+        audio.addEventListener('durationchange', updateDuration);
         audio.addEventListener('play', handlePlay);
         audio.addEventListener('pause', handlePause);
 
         return () => {
           audio.removeEventListener('timeupdate', updateTime);
-          audio.removeEventListener('loadedmetadata', updateDuration);
+          audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+          audio.removeEventListener('durationchange', updateDuration);
           audio.removeEventListener('play', handlePlay);
           audio.removeEventListener('pause', handlePause);
         };
@@ -115,6 +136,21 @@ export default function Playlist({ onContinue }: PlaylistProps) {
       setDuration(0);
     }
   }, [currentTrack]);
+
+  // Update progress bar fill color
+  const updateProgressStyle = (time: number, dur: number) => {
+    if (progressRef.current && dur && dur > 0) {
+      const percent = (time / dur) * 100;
+      progressRef.current.style.background = `linear-gradient(to right, #EAB308 0%, #EAB308 ${percent}%, #FEF9C3 ${percent}%, #FEF9C3 100%)`;
+    }
+  };
+
+  // Update progress style when duration changes
+  useEffect(() => {
+    if (duration > 0) {
+      updateProgressStyle(currentTime, duration);
+    }
+  }, [duration, currentTime]);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -183,12 +219,13 @@ export default function Playlist({ onContinue }: PlaylistProps) {
         const newTime = parseFloat(e.target.value);
         audio.currentTime = newTime;
         setCurrentTime(newTime);
+        updateProgressStyle(newTime, duration || audio.duration || 1);
       }
     }
   };
 
   const formatTime = (seconds: number) => {
-    if (isNaN(seconds)) return '0:00';
+    if (!seconds || isNaN(seconds) || seconds === Infinity) return '0:00';
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, '0')}`;
@@ -271,21 +308,23 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                   {currentTrackData.description}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-[#854D0E] w-8 text-left">
+                  <span className="text-xs text-[#854D0E] w-8 text-left tabular-nums">
                     {formatTime(currentTime)}
                   </span>
                   <input
+                    ref={progressRef}
                     type="range"
                     min="0"
                     max={duration || 0}
+                    step="0.1"
                     value={currentTime}
                     onChange={handleSeek}
-                    className="flex-1 h-1 accent-[#EAB308] appearance-none bg-yellow-100 rounded-full cursor-pointer"
+                    className="flex-1 h-1.5 rounded-full cursor-pointer appearance-none bg-[#FEF9C3]"
                     style={{
-                      background: `linear-gradient(to right, #EAB308 0%, #EAB308 ${(currentTime / (duration || 1)) * 100}%, #FEF9C3 ${(currentTime / (duration || 1)) * 100}%, #FEF9C3 100%)`,
+                      background: `linear-gradient(to right, #EAB308 0%, #EAB308 ${duration > 0 ? (currentTime / duration) * 100 : 0}%, #FEF9C3 ${duration > 0 ? (currentTime / duration) * 100 : 0}%, #FEF9C3 100%)`,
                     }}
                   />
-                  <span className="text-xs text-[#854D0E] w-8 text-right">
+                  <span className="text-xs text-[#854D0E] w-8 text-right tabular-nums">
                     {formatTime(duration)}
                   </span>
                 </div>
