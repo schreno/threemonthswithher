@@ -37,35 +37,35 @@ const tracks: Track[] = [
     title: "High School Sweethearts",
     description: "Honestly, distance is just a test to see how far love can travel baby. My high school sweetheart, no matter the miles ✈️🥰🌎",
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/hss-song.mp3"
+    audio: "/assets/rideyourwave-song.mp3"
   },
   {
     id: 4,
     title: "Ang Pag-ibig ay Kanibalismo",
     description: "Magdodroga tayo... kimi lang, bawal 'yon. Ikaw lang sapat na, hehe 🤤😋",
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/pak-song.mp3"
+    audio: "/assets/rideyourwave-song.mp3"
   },
   {
     id: 5,
     title: "Blue",
     description: "Remember talking about this while we were on roblox? Now every time I hear it, I just picture us by the waves. 🌊💙💛",    
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/blue-song.mp3"
+    audio: "/assets/rideyourwave-song.mp3"
   },
   {
     id: 6,
     title: "Yellow",
     description: "Look how the stars shine for you, and everything is yellow. Just like the sunflowers. 🌻✨",
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/yellow-song.mp3"
+    audio: "/assets/rideyourwave-song.mp3"
   },
   {
     id: 7,
     title: "Seasons",
     description: "I'll give you all my life, my seasons. By your side, I'll be your seasons. ☀️💛",
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/wte-song.mp3"
+    audio: "/assets/rideyourwave-song.mp3"
   }
 ];
 
@@ -221,7 +221,6 @@ export default function Playlist({ onContinue }: PlaylistProps) {
   };
 
   const handleTrackClick = async (trackId: number) => {
-    // If user was dragging, don't trigger click
     if (dragRef.current) return;
 
     Object.values(audioRefs.current).forEach((audio) => {
@@ -416,51 +415,55 @@ export default function Playlist({ onContinue }: PlaylistProps) {
           {/* Carousel */}
           <div className="mb-8">
             <div className="relative max-w-4xl mx-auto">
-              {/* Left Arrow */}
-              <button
-                onClick={scrollLeft}
-                disabled={!canScrollLeft}
-                className={`absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
-                  canScrollLeft
-                    ? 'text-[#A16207] hover:bg-yellow-50 cursor-pointer'
-                    : 'text-gray-300 cursor-not-allowed'
-                }`}
-                aria-label="Scroll left"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M15 18l-6-6 6-6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              {/* Left Arrow - full height flex wrapper for perfect vertical centering */}
+              <div className="absolute left-0 top-0 bottom-0 flex items-center z-30 pl-1">
+                <button
+                  onClick={scrollLeft}
+                  disabled={!canScrollLeft}
+                  className={`w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
+                    canScrollLeft
+                      ? 'text-[#A16207] hover:bg-yellow-50 cursor-pointer'
+                      : 'text-gray-300 cursor-not-allowed'
+                  }`}
+                  aria-label="Scroll left"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M15 18l-6-6 6-6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
 
-              {/* Right Arrow */}
-              <button
-                onClick={scrollRight}
-                disabled={!canScrollRight}
-                className={`absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
-                  canScrollRight
-                    ? 'text-[#A16207] hover:bg-yellow-50 cursor-pointer'
-                    : 'text-gray-300 cursor-not-allowed'
-                }`}
-                aria-label="Scroll right"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M9 18l6-6-6-6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              {/* Right Arrow - full height flex wrapper for perfect vertical centering */}
+              <div className="absolute right-0 top-0 bottom-0 flex items-center z-30 pr-1">
+                <button
+                  onClick={scrollRight}
+                  disabled={!canScrollRight}
+                  className={`w-10 h-10 rounded-full bg-white shadow-lg border border-yellow-200 flex items-center justify-center transition-all focus:outline-none focus:ring-4 focus:ring-yellow-300 ${
+                    canScrollRight
+                      ? 'text-[#A16207] hover:bg-yellow-50 cursor-pointer'
+                      : 'text-gray-300 cursor-not-allowed'
+                  }`}
+                  aria-label="Scroll right"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 18l6-6-6-6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
 
-              {/* Tracks Container - pointer-events-none so arrows stay clickable */}
+              {/* Tracks Container */}
               <div
                 ref={scrollContainerRef}
                 onMouseDown={handleMouseDown}
