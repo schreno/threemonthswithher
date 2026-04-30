@@ -36,36 +36,36 @@ const tracks: Track[] = [
     id: 3,
     title: "High School Sweethearts",
     description: "Honestly, distance is just a test to see how far love can travel baby. My high school sweetheart, no matter the miles ✈️🥰🌎",
-    image: "/assets/rideyourwave.gif",
-    audio: "/assets/rideyourwave-song.mp3"
+    image: "/assets/hss.gif",
+    audio: "/assets/hss-song.mp3"
   },
   {
     id: 4,
     title: "Ang Pag-ibig ay Kanibalismo",
     description: "Magdodroga tayo... kimi lang, bawal 'yon. Ikaw lang sapat na, hehe 🤤😋",
-    image: "/assets/rideyourwave.gif",
-    audio: "/assets/rideyourwave-song.mp3"
+    image: "/assets/pak.gif",
+    audio: "/assets/pak-song.mp3"
   },
   {
     id: 5,
     title: "Blue",
     description: "Remember talking about this while we were on roblox? Now every time I hear it, I just picture us by the waves. 🌊💙💛",    
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/rideyourwave-song.mp3"
+    audio: "/assets/blue-song.mp3"
   },
   {
     id: 6,
     title: "Yellow",
     description: "Look how the stars shine for you, and everything is yellow. Just like the sunflowers. 🌻✨",
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/rideyourwave-song.mp3"
+    audio: "/assets/yellow-song.mp3"
   },
   {
     id: 7,
     title: "Seasons",
     description: "I'll give you all my life, my seasons. By your side, I'll be your seasons. ☀️💛",
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/rideyourwave-song.mp3"
+    audio: "/assets/wte-song.mp3"
   }
 ];
 
