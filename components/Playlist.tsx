@@ -4,6 +4,23 @@ import React, { useState, useRef, useEffect, memo } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { showToast } from '@/lib/toast';
+import { memo } from 'react';
+
+const StableImage = memo(({ src, alt }: { src: string; alt: string }) => (
+  <Image
+    src={src}
+    alt={alt}
+    fill
+    unoptimized
+    className="object-cover"
+    sizes="48px"
+    onError={(e) => {
+      e.currentTarget.style.display = 'none';
+    }}
+  />
+));
+
+StableImage.displayName = 'StableImage';
 
 interface PlaylistProps {
   onContinue?: () => void;
@@ -65,7 +82,7 @@ const TrackCard = memo(({
       <div className="relative bg-white rounded-xl p-4 border-2 shadow-lg transition-all border-yellow-100 hover:border-yellow-200 hover:shadow-xl group-hover:shadow-yellow-200/30 h-full flex flex-col">
         <div className="relative mb-3">
           <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300 shadow-md">
-            <Image
+            <StableImage
               src={track.image}
               alt={track.title}
               fill
@@ -282,7 +299,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
           {currentTrackData ? (
             <div className="mb-6 flex items-center gap-4 p-3 rounded-lg bg-white/70 border border-yellow-100 shadow-sm max-w-lg w-full mx-auto">
               <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm">
-               <Image
+               <StableImage
                   src={currentTrackData.image}
                   alt={currentTrackData.title}
                   fill
