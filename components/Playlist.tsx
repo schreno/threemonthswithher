@@ -20,10 +20,10 @@ interface Track {
 const tracks: Track[] = [
   {
     id: 1,
-    title: 'Dil Cheeze Tujhe Dedi',
-    description: 'You own this heart — dedicated to you 💞',
+    title: 'Brand New Story',
+    description: 'Every time this music plays, I think of us and our movie. I will always be there when you sing it 🥹🌊✨',
     image: '/assets/rideyourwave.gif',
-    audio: '/assets/music1-Bpgt1BZ5.mp3',
+    audio: '/assets/rideyourwave-song.mp3',
   },
   {
     id: 2,
