@@ -20,17 +20,17 @@ interface Track {
 const tracks: Track[] = [
   {
     id: 1,
+    "title": "Mahika",
+    "description": "You told me this was your favorite andddd now it's ours 🥹. Your mahika, forever always baby 🌻🥰",
+    "image": "/assets/mahika.gif",
+    "audio": "/assets/mahika-song.mp3"
+  },
+  {
+    id: 2,
     title: 'Brand New Story',
     description: 'Every time this music plays, I think of us and our movie. I will always be there when you sing it 🥹🌊✨',
     image: '/assets/rideyourwave.gif',
     audio: '/assets/rideyourwave-song.mp3',
-  },
-  {
-    id: 2,
-    title: 'If the world was ending',
-    description: "Even if the world ends, I'd still find you 🤍",
-    image: '/assets/music2.png',
-    audio: '/assets/music2-mdcMq3L1.mp3',
   },
   {
     id: 3,
