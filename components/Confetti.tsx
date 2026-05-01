@@ -8,14 +8,14 @@ interface ConfettiProps {
   onComplete?: () => void;
 }
 
-// 1. Lightened Sunflower Palette
-const lightSunflowerColors = [
-  '#FEF3C7', // Warm Cream (Amber 100)
-  '#FDE68A', // Soft Yellow (Amber 200)
-  '#FCD34D', // Bright Sunflower (Amber 300)
-  '#FBBF24', // Golden (Amber 400)
-  '#FEFCE8', // Pale Chiffon (Yellow 50)
-  '#A16207', // Light Toasted Brown (Yellow 800 - for center contrast)
+// 1. Ultra-light Sunflower Palette: Pales, Creams, and Softest Yellows
+const ultraLightSunflowerColors = [
+  '#FFFBEB', // Bleached Yellow (Amber 50)
+  '#FEFCE8', // Soft Cream (Yellow 50)
+  '#FEF9C3', // Pale Lemon (Yellow 100)
+  '#FEF3C7', // Chiffon (Amber 100)
+  '#FDE68A', // Light Butter (Amber 200)
+  '#EAB3081A', // A very faint, translucent gold for depth
 ];
 
 export default function Confetti({ trigger, onComplete }: ConfettiProps) {
@@ -32,31 +32,29 @@ export default function Confetti({ trigger, onComplete }: ConfettiProps) {
 
   useEffect(() => {
     if (!trigger) return;
-
-    const duration = 3000; 
+    const duration = 3500; 
     const timer = setTimeout(() => {
       onComplete?.();
     }, duration);
-
     return () => clearTimeout(timer);
   }, [trigger, onComplete]);
 
   if (!trigger) return null;
 
-  // High density for a "strong" shower
-  const particleCount = 150;
+  // 180 particles for a very strong, dense burst
+  const particleCount = 180;
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[100] overflow-hidden">
       {Array.from({ length: particleCount }).map((_, i) => {
-        const delay = Math.random() * 0.4;
-        const duration = 2 + Math.random() * 1.5;
+        const delay = Math.random() * 0.6;
+        const duration = 2.5 + Math.random() * 2;
         const xSpawn = Math.random() * 100;
         const ySpawn = -10 - Math.random() * 20;
         const initialRotation = Math.random() * 360;
-        const color = lightSunflowerColors[Math.floor(Math.random() * lightSunflowerColors.length)];
-        const isCircle = Math.random() > 0.4; // Slightly more circles for a "petal" look
-        const size = 6 + Math.random() * 6;
+        const color = ultraLightSunflowerColors[Math.floor(Math.random() * ultraLightSunflowerColors.length)];
+        const isCircle = Math.random() > 0.3; // More circles for a "petal" aesthetic
+        const size = 5 + Math.random() * 7;
 
         return (
           <motion.div
@@ -68,25 +66,27 @@ export default function Confetti({ trigger, onComplete }: ConfettiProps) {
               backgroundColor: color,
               width: `${size}px`,
               height: `${size}px`,
-              boxShadow: '0px 1px 2px rgba(0,0,0,0.05)', 
+              // Subtle glow instead of a dark shadow for the "light" theme
+              boxShadow: '0 0 8px rgba(255, 255, 255, 0.8)', 
+              opacity: 0.9,
             }}
             initial={{
-              opacity: 1,
+              opacity: 0,
               y: 0,
               rotate: initialRotation,
               scale: 0,
             }}
             animate={{
-              opacity: [0, 1, 1, 0],
-              y: windowHeight + 150, 
-              rotate: initialRotation + (Math.random() - 0.5) * 1440, // High-speed spin
-              scale: [0, 1.2, 1, 0.6], 
-              x: (Math.random() - 0.5) * 350, // Wide horizontal drift
+              opacity: [0, 0.9, 0.9, 0],
+              y: windowHeight + 200, 
+              rotate: initialRotation + (Math.random() - 0.5) * 2000, 
+              scale: [0, 1.3, 1, 0.5], 
+              x: (Math.random() - 0.5) * 450, // Even wider drift for a "stronger" storm effect
             }}
             transition={{
               duration,
               delay,
-              ease: [0.23, 1, 0.32, 1], 
+              ease: [0.1, 0.5, 0.3, 1], // Floatier, more natural fall
             }}
           />
         );
