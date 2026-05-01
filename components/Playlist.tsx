@@ -301,11 +301,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
   
   useEffect(() => {
     const t = activeTheme;
-  
-    // Notify parent first
-    onThemeChange?.(t);
-  
-    // Then update CSS variables
+    
     const root = document.documentElement;
     root.style.setProperty('--pl-bg', t.bg);
     root.style.setProperty('--pl-cardBg', t.cardBg);
@@ -321,7 +317,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     root.style.setProperty('--pl-decorative3', t.decorative3);
     root.style.setProperty('--pl-playerBg', t.playerBg);
     root.style.setProperty('--pl-ring', t.ring);
-  }, [activeTheme, onThemeChange]);
+  }, [activeTheme]);
 
   const checkScrollButtons = useCallback(() => {
     if (scrollContainerRef.current) {
