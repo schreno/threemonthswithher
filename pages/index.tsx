@@ -39,15 +39,16 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Happy National Princess Day 👑</title>
+        {/* Updated Title for the 3-Month Anniversary */}
+        <title>Happy 3 Monthsary! ❤️</title>
         <meta
           name="description"
-          content="A special surprise for National Princess Day - A delightful interactive experience with love letters, music, and memories"
+          content="Celebrating 3 wonderful months together. A special surprise filled with memories and love."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
-          content="National Princess Day, love letter, surprise, romantic, interactive"
+          content="anniversary, 3 months, love letter, surprise, romantic"
         />
         <meta name="author" content="Made with 💕" />
 
@@ -55,52 +56,52 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
 
+        {/* Social Media OpenGraph Tags */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Happy National Princess Day 👑" />
+        <meta property="og:title" content="Happy 3 Monthsary! ❤️" />
         <meta
           property="og:description"
-          content="A special surprise for National Princess Day - A delightful interactive experience with love letters, music, and memories"
+          content="3 months down, a lifetime to go. Open your surprise here!"
         />
         <meta property="og:image" content="/og-image.jpg" />
         <meta
           property="og:url"
-          content="https://national-princess-day.vercel.app"
+          content="https://our-anniversary.vercel.app"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Happy National Princess Day 👑" />
+        <meta name="twitter:title" content="Happy 3 Monthsary! ❤️" />
         <meta
           name="twitter:description"
-          content="A special surprise for National Princess Day"
+          content="A special surprise for our 3-month anniversary"
         />
-        <meta name="twitter:image" content="/og-image.jpg" />
 
         <meta name="theme-color" content="#fff8e7" />
-        <link rel="canonical" href="https://national-princess-day.vercel.app" />
       </Head>
 
       <main className="min-h-screen">
         {!isGiftOpened && (
           <Hero onOpenGift={handleOpenGift} isGiftOpened={isGiftOpened} />
         )}
+        
         {isGiftOpened && (
           <MessageCard isRevealed={isGiftOpened} onRestart={handleRestart} />
         )}
+        
         <Confetti trigger={showConfetti} onComplete={handleConfettiComplete} />
 
-        {/* 1. FIXED BUTTON REMOVED FROM HERE */}
-
         <footer className="px-4 py-8 text-center text-text/60 relative z-50">
-          <p className="text-sm">
-            National Princess Day —{' '}
+          <p className="text-sm font-medium">
+            Celebrating 3 Months Together ✨
+          </p>
+          <p className="text-xs mt-1">
             {new Date().toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
             })}
           </p>
-          <p className="text-xs mt-2">Made with 💕</p>
-          {/* 2. FOOTER BUTTON REMOVED FROM HERE */}
+          <p className="text-xs mt-3 opacity-70">Made with 💕</p>
         </footer>
       </main>
 
