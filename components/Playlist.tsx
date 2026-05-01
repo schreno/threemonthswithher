@@ -15,6 +15,7 @@ interface Track {
   description: string;
   image: string;
   audio: string;
+  color: string; // custom title color when selected
 }
 
 const tracks: Track[] = [
@@ -23,49 +24,56 @@ const tracks: Track[] = [
     title: "Mahika",
     description: "You told me this was your favorite andddd now it's ours 🥹. Your mahika, forever always baby 🌻🥰",
     image: "/assets/mahika.gif",
-    audio: "/assets/mahika-song.mp3"
+    audio: "/assets/mahika-song.mp3",
+    color: "#D946EF" // magenta/pink
   },
   {
     id: 2,
     title: "Brand New Story",
     description: "Every time this music plays, I think of us and our movie. I will always be there when you sing it 🥹🌊✨",
     image: "/assets/rideyourwave.gif",
-    audio: "/assets/rideyourwave-song.mp3"
+    audio: "/assets/rideyourwave-song.mp3",
+    color: "#0EA5E9" // sky blue
   },
   {
     id: 3,
     title: "High School Sweethearts",
     description: "Honestly, distance is just a test to see how far love can travel baby. My high school sweetheart, no matter the miles ✈️🥰🌎",
     image: "/assets/hss.gif",
-    audio: "/assets/hss-song.mp3"
+    audio: "/assets/hss-song.mp3",
+    color: "#EC4899" // pink
   },
   {
     id: 4,
     title: "Ang Pag-ibig ay Kanibalismo",
     description: "Magdodroga tayo... kimi lang, bawal 'yon. Ikaw lang sapat na, hehe 🤤😋",
     image: "/assets/pak.gif",
-    audio: "/assets/pak-song.mp3"
+    audio: "/assets/pak-song.mp3",
+    color: "#EF4444" // red
   },
   {
     id: 5,
     title: "Blue",
-    description: "Remember talking about this while we were on roblox? Now every time I hear it, I just picture us by the waves. 🌊💙💛",    
+    description: "Remember talking about this while we were on roblox? Now every time I hear it, I just picture us by the waves 🌊💙💛",    
     image: "/assets/blue.gif",
-    audio: "/assets/blue-song.mp3"
+    audio: "/assets/blue-song.mp3",
+    color: "#3B82F6" // blue
   },
   {
     id: 6,
     title: "Yellow",
-    description: "Look how the stars shine for you, and everything is yellow. Just like the sunflowers. 🌻✨",
+    description: "Look how the stars shine for you, and everything is yellow. Just like the sunflowers 🌻✨",
     image: "/assets/yellow.gif",
-    audio: "/assets/yellow-song.mp3"
+    audio: "/assets/yellow-song.mp3",
+    color: "#EAB308" // yellow
   },
   {
     id: 7,
     title: "Seasons",
-    description: "I'll give you all my life, my seasons. By your side, I'll be your seasons. ☀️💛",
+    description: "I'll give you all my life, my seasons. By your side, I'll be your seasons ☀️💛",
     image: "/assets/wte.jpg",
-    audio: "/assets/wte-song.mp3"
+    audio: "/assets/wte-song.mp3",
+    color: "#F97316" // orange
   }
 ];
 
@@ -359,7 +367,10 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                 </div>
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold text-[#422006] truncate">
+                <div 
+                  className="text-sm font-bold truncate transition-colors duration-500"
+                  style={{ color: currentTrackData.color }}
+                >
                   {currentTrackData.title}
                 </div>
                 <div className="text-xs text-[#854D0E] mb-2 truncate">
@@ -475,73 +486,79 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                 }`}
                 style={{ scrollbarWidth: 'none' }}
               >
-                {tracks.map((track) => (
-                  <div
-                    key={track.id}
-                    className={`group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 h-full hover:scale-105 hover:z-10 pointer-events-auto ${
-                      currentTrack === track.id
-                        ? 'ring-2 ring-[#EAB308] ring-offset-2 rounded-xl'
-                        : ''
-                    }`}
-                    onClick={() => handleTrackClick(track.id)}
-                  >
-                    <div className="relative bg-white rounded-xl p-4 border-2 shadow-lg transition-all border-yellow-100 hover:border-yellow-200 hover:shadow-xl group-hover:shadow-yellow-200/30 h-full flex flex-col">
-                      <div className="relative mb-3">
-                        <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300 shadow-md">
-                          <StableImage
-                            src={track.image}
-                            alt={track.title}
-                            isActive={currentTrack === track.id}
-                          />
-                          <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 pointer-events-none">
-                            🎵
+                {tracks.map((track) => {
+                  const isActive = currentTrack === track.id;
+                  return (
+                    <div
+                      key={track.id}
+                      className={`group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 h-full hover:scale-105 hover:z-10 pointer-events-auto ${
+                        isActive
+                          ? 'ring-2 ring-[#EAB308] ring-offset-2 rounded-xl'
+                          : ''
+                      }`}
+                      onClick={() => handleTrackClick(track.id)}
+                    >
+                      <div className="relative bg-white rounded-xl p-4 border-2 shadow-lg transition-all border-yellow-100 hover:border-yellow-200 hover:shadow-xl group-hover:shadow-yellow-200/30 h-full flex flex-col">
+                        <div className="relative mb-3">
+                          <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300 shadow-md">
+                            <StableImage
+                              src={track.image}
+                              alt={track.title}
+                              isActive={isActive}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 pointer-events-none">
+                              🎵
+                            </div>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100">
+                            <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                              {isActive ? (
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                  <rect x="6" y="4" width="4" height="16" fill="#A16207" />
+                                  <rect x="14" y="4" width="4" height="16" fill="#A16207" />
+                                </svg>
+                              ) : (
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                  <path d="M8 5v14l11-7z" fill="#A16207" />
+                                </svg>
+                              )}
+                            </div>
+                          </div>
+                          {isActive && (
+                            <div className="absolute top-2 right-2 w-3 h-3 bg-[#EAB308] rounded-full animate-pulse"></div>
+                          )}
+                        </div>
+                        <div className="text-center flex-1 flex flex-col justify-center">
+                          <div 
+                            className="font-bold mb-1 text-sm min-h-[1.25rem] transition-colors duration-500"
+                            style={{ color: isActive ? track.color : '#422006' }}
+                          >
+                            {track.title}
+                          </div>
+                          <div className="text-xs text-[#854D0E] leading-relaxed min-h-[2.5rem] flex items-center justify-center">
+                            {track.description}
                           </div>
                         </div>
-                        <div className="absolute inset-0 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100">
-                          <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                            {currentTrack === track.id ? (
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <rect x="6" y="4" width="4" height="16" fill="#A16207" />
-                                <rect x="14" y="4" width="4" height="16" fill="#A16207" />
-                              </svg>
-                            ) : (
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M8 5v14l11-7z" fill="#A16207" />
-                              </svg>
-                            )}
-                          </div>
-                        </div>
-                        {currentTrack === track.id && (
-                          <div className="absolute top-2 right-2 w-3 h-3 bg-[#EAB308] rounded-full animate-pulse"></div>
-                        )}
                       </div>
-                      <div className="text-center flex-1 flex flex-col justify-center">
-                        <div className="font-bold text-[#422006] mb-1 text-sm min-h-[1.25rem]">
-                          {track.title}
-                        </div>
-                        <div className="text-xs text-[#854D0E] leading-relaxed min-h-[2.5rem] flex items-center justify-center">
-                          {track.description}
-                        </div>
-                      </div>
+                      <audio
+                        ref={(el) => {
+                          audioRefs.current[track.id] = el;
+                        }}
+                        src={track.audio}
+                        preload="metadata"
+                        onEnded={() => {
+                          setCurrentTrack(null);
+                          setIsPlaying(false);
+                          setCurrentTime(0);
+                        }}
+                        onError={(e) => {
+                          console.error('Audio error:', e);
+                          showToast.error('Failed to load audio. Please check the file.');
+                        }}
+                      />
                     </div>
-                    <audio
-                      ref={(el) => {
-                        audioRefs.current[track.id] = el;
-                      }}
-                      src={track.audio}
-                      preload="metadata"
-                      onEnded={() => {
-                        setCurrentTrack(null);
-                        setIsPlaying(false);
-                        setCurrentTime(0);
-                      }}
-                      onError={(e) => {
-                        console.error('Audio error:', e);
-                        showToast.error('Failed to load audio. Please check the file.');
-                      }}
-                    />
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
