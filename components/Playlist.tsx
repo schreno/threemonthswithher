@@ -266,17 +266,22 @@ export default function Playlist({ onContinue }: PlaylistProps) {
   // Content Variations
   const headerPairs = [
     { title: "My heart, in a Playlist", sub: "I guessssss press play and think of me? 🥰" },
-    { title: "The Soundtrack to Us", sub: "Every note holds a memory of you ✨" },
-    { title: "Our Story in Songs", sub: "Pili ka na ng kanta, baby 🌻" },
-    { title: "A Little Gift for You", sub: "Handpicked tracks for my favorite person 🥰" }
+    { title: "Just a little piece of me", sub: "Press play and let the music hug you for me 🥰" },
+    { title: "Listen at your own risk!", sub: "Warning: May cause extreme kilig and thinking about me 🤭💛" },
+    { title: "Closing the distance", sub: "Close your eyes, press play, and pretend I’m right there ✈️🌌" },
+    { title: "Songs for my Sunflower", sub: "To keep you company while I’m not around 🌻☀️" }
   ];
 
   const placeholders = [
-    "Choose a melody to set the mood ✨",
-    "Pick a track and let's get lost in the music...",
-    "Waiting for you to pick our soundtrack 🎧",
     "Press play on a memory...",
-    "Pili ka na ng kanta, baby! 🎶"
+    "Pili ka na ng kanta babyyy 🎶",
+    "Pipili ka o pipili ka 😤",
+    "Every song here has a piece of my heart. Which one first? 🥰",
+    "I spent hours picking these, so don't just stare at them! 😋",
+    "Our movie needs a background song. Pili ka na, baby. 🌊",
+    "Choose or i'll fuck you 🤤",
+    "Waiting for my sunflower to choose a melody.. 🌻✨",
+    "Can't decide? Just pick one, they're all about you anyway 🥰🌎"
   ];
 
   // Pick random content on initial load
