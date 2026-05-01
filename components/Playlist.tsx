@@ -249,6 +249,11 @@ export default function Playlist({ onContinue }: PlaylistProps) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  
+  // Random Text States
+  const [headerIndex, setHeaderIndex] = useState(0);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const audioRefs = useRef<{ [key: number]: HTMLAudioElement | null }>({});
   const progressRef = useRef<HTMLInputElement>(null);
@@ -257,6 +262,28 @@ export default function Playlist({ onContinue }: PlaylistProps) {
   const [startX, setStartX] = useState(0);
   const [scrollStartLeft, setScrollStartLeft] = useState(0);
   const dragRef = useRef(false);
+
+  // Content Variations
+  const headerPairs = [
+    { title: "My heart, in a Playlist", sub: "I guessssss press play and think of me? 🥰" },
+    { title: "The Soundtrack to Us", sub: "Every note holds a memory of you ✨" },
+    { title: "Our Story in Songs", sub: "Pili ka na ng kanta, baby 🌻" },
+    { title: "A Little Gift for You", sub: "Handpicked tracks for my favorite person 🥰" }
+  ];
+
+  const placeholders = [
+    "Choose a melody to set the mood ✨",
+    "Pick a track and let's get lost in the music...",
+    "Waiting for you to pick our soundtrack 🎧",
+    "Press play on a memory...",
+    "Pili ka na ng kanta, baby! 🎶"
+  ];
+
+  // Pick random content on initial load
+  useEffect(() => {
+    setHeaderIndex(Math.floor(Math.random() * headerPairs.length));
+    setPlaceholderIndex(Math.floor(Math.random() * placeholders.length));
+  }, []);
 
   const activeTheme = useMemo(() => {
     if (!currentTrack) return defaultTheme;
@@ -504,13 +531,13 @@ export default function Playlist({ onContinue }: PlaylistProps) {
               className="text-lg font-bold leading-tight transition-colors duration-700"
               style={{ color: t.text }}
             >
-              My heart, in a Playlist
+              {headerPairs[headerIndex].title}
             </h2>
             <div 
               className="text-xs transition-colors duration-700"
               style={{ color: t.textMuted }}
             >
-              I guessssss press play and think of me? 🥰
+              {headerPairs[headerIndex].sub}
             </div>
           </div>
         </div>
@@ -608,15 +635,15 @@ export default function Playlist({ onContinue }: PlaylistProps) {
           ) : (
             <div className="mb-6 h-20 flex items-center justify-center">
               <div 
-                className="text-base font-medium text-center transition-colors duration-700"
+                className="text-base font-medium text-center transition-colors duration-700 px-4"
                 style={{ color: t.textMuted }}
               >
-                Choose a track to start vibing ✨
+                {placeholders[placeholderIndex]}
               </div>
             </div>
           )}
 
-          {/* Carousel - extra vertical padding so hover/ring doesn't get clipped */}
+          {/* Carousel */}
           <div className="mb-4">
             <div className="relative max-w-4xl mx-auto py-4">
               {/* Left Arrow */}
