@@ -7,7 +7,9 @@ import { showToast } from '@/lib/toast';
 
 interface PlaylistProps {
   onContinue?: () => void;
+  onThemeChange?: (theme: TrackTheme) => void; // NEW
 }
+
 
 interface TrackTheme {
   bg: string;
@@ -296,8 +298,14 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     return track?.theme || defaultTheme;
   }, [currentTrack]);
 
+  
   useEffect(() => {
     const t = activeTheme;
+  
+    // Notify parent first
+    onThemeChange?.(t);
+  
+    // Then update CSS variables
     const root = document.documentElement;
     root.style.setProperty('--pl-bg', t.bg);
     root.style.setProperty('--pl-cardBg', t.cardBg);
@@ -313,7 +321,7 @@ export default function Playlist({ onContinue }: PlaylistProps) {
     root.style.setProperty('--pl-decorative3', t.decorative3);
     root.style.setProperty('--pl-playerBg', t.playerBg);
     root.style.setProperty('--pl-ring', t.ring);
-  }, [activeTheme]);
+  }, [activeTheme, onThemeChange]);
 
   const checkScrollButtons = useCallback(() => {
     if (scrollContainerRef.current) {
