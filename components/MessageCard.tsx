@@ -274,6 +274,48 @@ export default function MessageCard({
                               life. Every day with you is a gift, and I&apos;m
                               grateful for every second we share together. You
                               make me want to be the best version of myself
+                              Every moment with you feels like a beautiful dream
+                              that I never want to wake up from. I want you to
+                              know that you are the most precious person in my
+                              life. Every day with you is a gift, and I&apos;m
+                              grateful for every second we share together. You
+                              make me want to be the best version of myself
+                              Every moment with you feels like a beautiful dream
+                              that I never want to wake up from. I want you to
+                              know that you are the most precious person in my
+                              life. Every day with you is a gift, and I&apos;m
+                              grateful for every second we share together. You
+                              make me want to be the best version of myself
+                              Every moment with you feels like a beautiful dream
+                              that I never want to wake up from. I want you to
+                              know that you are the most precious person in my
+                              life. Every day with you is a gift, and I&apos;m
+                              grateful for every second we share together. You
+                              make me want to be the best version of myself
+                              Every moment with you feels like a beautiful dream
+                              that I never want to wake up from. I want you to
+                              know that you are the most precious person in my
+                              life. Every day with you is a gift, and I&apos;m
+                              grateful for every second we share together. You
+                              make me want to be the best version of myself
+                              Every moment with you feels like a beautiful dream
+                              that I never want to wake up from. I want you to
+                              know that you are the most precious person in my
+                              life. Every day with you is a gift, and I&apos;m
+                              grateful for every second we share together. You
+                              make me want to be the best version of myself
+                              Every moment with you feels like a beautiful dream
+                              that I never want to wake up from. I want you to
+                              know that you are the most precious person in my
+                              life. Every day with you is a gift, and I&apos;m
+                              grateful for every second we share together. You
+                              make me want to be the best version of myself
+                              Every moment with you feels like a beautiful dream
+                              that I never want to wake up from. I want you to
+                              know that you are the most precious person in my
+                              life. Every day with you is a gift, and I&apos;m
+                              grateful for every second we share together. You
+                              make me want to be the best version of myself
                             </div>
                             <div className="mt-8 ml-auto w-fit">
                               <div className="font-medium text-[#8B7300]">
