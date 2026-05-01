@@ -504,13 +504,13 @@ export default function Playlist({ onContinue }: PlaylistProps) {
               className="text-lg font-bold leading-tight transition-colors duration-700"
               style={{ color: t.text }}
             >
-              A Dedicated Playlist For You
+              My heart, in a Playlist
             </h2>
             <div 
               className="text-xs transition-colors duration-700"
               style={{ color: t.textMuted }}
             >
-              I Hope You&apos;ll Like It
+              I guessssss press play and think of me? 🥰
             </div>
           </div>
         </div>
