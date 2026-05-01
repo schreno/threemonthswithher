@@ -472,15 +472,27 @@ export default function Playlist({ onContinue }: PlaylistProps) {
       style={{ backgroundColor: t.bg }}
     >
       {/* Decorative floating elements */}
-      <svg className="absolute top-16 left-8 w-10 h-10 animate-float-slow" viewBox="0 0 24 24" fill="none">
+      <svg
+        className="absolute top-16 left-8 w-10 h-10 animate-float-slow"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path d="M12 2l2.39 4.84L19 8.1l-3.5 3.41.82 5.04L12 15.77 7.68 16.55l.82-5.04L5 8.1l4.61-1.26L12 2z" fill={t.decorative1} />
       </svg>
 
-      <svg className="absolute right-10 top-20 w-12 h-12 opacity-80 animate-float" viewBox="0 0 24 24" fill="none">
+      <svg
+        className="absolute right-10 top-20 w-12 h-12 opacity-80 animate-float"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path d="M20 17.58A4.42 4.42 0 0115.58 22H7.42A4.42 4.42 0 013 17.58 4.5 4.5 0 017.5 13H8a5 5 0 019.9-1.2A3.5 3.5 0 0120 17.58z" fill={t.decorative2} />
       </svg>
 
-      <svg className="absolute left-16 bottom-32 w-8 h-8 animate-float-slow" viewBox="0 0 24 24" fill="none">
+      <svg
+        className="absolute left-16 bottom-32 w-8 h-8 animate-float-slow"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
         <path d="M12 21s-6-4.35-8.5-6.5C1.85 12.73 3 9 6 8c2.28-.75 3.5 1 6 1s3.72-1.75 6-1c3 1 4.15 4.73 2.5 6.5C18 16.65 12 21 12 21z" fill={t.decorative3} />
       </svg>
 
@@ -488,10 +500,16 @@ export default function Playlist({ onContinue }: PlaylistProps) {
         {/* Header */}
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="text-center">
-            <h2 className="text-lg font-bold leading-tight transition-colors duration-700" style={{ color: t.text }}>
+            <h2 
+              className="text-lg font-bold leading-tight transition-colors duration-700"
+              style={{ color: t.text }}
+            >
               A Dedicated Playlist For You
             </h2>
-            <div className="text-xs transition-colors duration-700" style={{ color: t.textMuted }}>
+            <div 
+              className="text-xs transition-colors duration-700"
+              style={{ color: t.textMuted }}
+            >
               I Hope You&apos;ll Like It
             </div>
           </div>
@@ -500,27 +518,48 @@ export default function Playlist({ onContinue }: PlaylistProps) {
         {/* Playlist Container */}
         <div 
           className="rounded-2xl p-4 sm:p-5 md:p-6 border shadow-md animate-fadeIn mx-auto transition-all duration-700"
-          style={{ backgroundColor: t.cardBg, borderColor: t.border }}
+          style={{ 
+            backgroundColor: t.cardBg, 
+            borderColor: t.border 
+          }}
         >
           {/* Music Player */}
           {currentTrackData ? (
             <div 
               className="mb-6 flex items-center gap-4 p-3 rounded-lg border shadow-sm max-w-lg w-full mx-auto transition-all duration-700"
-              style={{ backgroundColor: t.playerBg, borderColor: t.border }}
+              style={{ 
+                backgroundColor: t.playerBg,
+                borderColor: t.border 
+              }}
             >
               <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm">
-                <StableImage src={currentTrackData.image} alt={currentTrackData.title} isActive={true} />
-                <div className="absolute inset-0 flex items-center justify-center text-lg opacity-30 pointer-events-none">🎵</div>
+                <StableImage
+                  src={currentTrackData.image}
+                  alt={currentTrackData.title}
+                  isActive={true}
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-lg opacity-30 pointer-events-none">
+                  🎵
+                </div>
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-bold truncate transition-colors duration-500" style={{ color: currentTrackData.color }}>
+                <div 
+                  className="text-sm font-bold truncate transition-colors duration-500"
+                  style={{ color: currentTrackData.color }}
+                >
                   {currentTrackData.title}
                 </div>
-                <div className="text-xs mb-2 truncate transition-colors duration-700" style={{ color: t.textMuted }}>
+                <div 
+                  className="text-xs mb-2 truncate transition-colors duration-700"
+                  style={{ color: t.textMuted }}
+                >
                   {currentTrackData.description}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs w-8 text-left tabular-nums transition-colors duration-700" style={{ color: t.textMuted }}>
+                  <span 
+                    className="text-xs w-8 text-left tabular-nums transition-colors duration-700"
+                    style={{ color: t.textMuted }}
+                  >
                     {formatTime(currentTime)}
                   </span>
                   <input
@@ -536,7 +575,10 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                       background: `linear-gradient(to right, ${t.progressFill} 0%, ${t.progressFill} ${duration > 0 ? (currentTime / duration) * 100 : 0}%, ${t.progressTrack} ${duration > 0 ? (currentTime / duration) * 100 : 0}%, ${t.progressTrack} 100%)`,
                     }}
                   />
-                  <span className="text-xs w-8 text-right tabular-nums transition-colors duration-700" style={{ color: t.textMuted }}>
+                  <span 
+                    className="text-xs w-8 text-right tabular-nums transition-colors duration-700"
+                    style={{ color: t.textMuted }}
+                  >
                     {formatTime(duration)}
                   </span>
                 </div>
@@ -544,7 +586,11 @@ export default function Playlist({ onContinue }: PlaylistProps) {
               <button
                 onClick={handlePlayPause}
                 className="w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all transform hover:scale-110 focus:outline-none cursor-pointer"
-                style={{ backgroundColor: 'white', color: t.accent, border: `1px solid ${t.border}` }}
+                style={{ 
+                  backgroundColor: 'white',
+                  color: t.accent,
+                  border: `1px solid ${t.border}`
+                }}
                 aria-label={isPlaying ? 'Pause' : 'Play'}
               >
                 {isPlaying ? (
@@ -561,15 +607,18 @@ export default function Playlist({ onContinue }: PlaylistProps) {
             </div>
           ) : (
             <div className="mb-6 h-20 flex items-center justify-center">
-              <div className="text-base font-medium text-center transition-colors duration-700" style={{ color: t.textMuted }}>
+              <div 
+                className="text-base font-medium text-center transition-colors duration-700"
+                style={{ color: t.textMuted }}
+              >
                 Choose a track to start vibing ✨
               </div>
             </div>
           )}
 
-          {/* Carousel */}
-          <div className="mb-8">
-            <div className="relative max-w-4xl mx-auto">
+          {/* Carousel - extra vertical padding so hover/ring doesn't get clipped */}
+          <div className="mb-4">
+            <div className="relative max-w-4xl mx-auto py-4">
               {/* Left Arrow */}
               <div className="absolute left-0 top-0 bottom-0 flex items-center z-30 pl-1">
                 <button
@@ -617,7 +666,9 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseLeave}
-                className={`flex gap-4 overflow-x-auto scrollbar-hide px-12 py-2 justify-start select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+                className={`flex gap-4 overflow-x-auto scrollbar-hide px-12 py-4 justify-start select-none ${
+                  isDragging ? 'cursor-grabbing' : 'cursor-grab'
+                }`}
                 style={{ scrollbarWidth: 'none' }}
               >
                 {tracks.map((track) => {
@@ -625,27 +676,35 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                   return (
                     <div
                       key={track.id}
-                      className="group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 h-full hover:scale-105 hover:z-10 pointer-events-auto"
+                      className="group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 hover:scale-105 hover:z-10 pointer-events-auto"
+                      style={{
+                        boxShadow: isActive ? `0 0 0 2px ${track.theme.ring}, 0 0 0 4px white` : undefined,
+                        borderRadius: isActive ? '0.75rem' : undefined
+                      }}
                       onClick={() => handleTrackClick(track.id)}
                     >
-                      {/* Card wrapper - no offset ring, uses inset shadow instead */}
                       <div 
                         className="relative rounded-xl p-4 border-2 shadow-lg transition-all h-full flex flex-col"
                         style={{
                           backgroundColor: 'white',
                           borderColor: isActive ? track.theme.ring : t.border,
-                          boxShadow: isActive 
-                            ? `inset 0 0 0 2px ${track.theme.ring}, 0 10px 25px -5px ${track.theme.ring}30`
-                            : undefined,
                         }}
                       >
                         <div className="relative mb-3">
                           <div 
                             className="relative w-full aspect-square rounded-lg overflow-hidden shadow-md"
-                            style={{ background: `linear-gradient(to bottom right, ${track.theme.cardBg}, ${track.theme.border})` }}
+                            style={{
+                              background: `linear-gradient(to bottom right, ${track.theme.cardBg}, ${track.theme.border})`
+                            }}
                           >
-                            <StableImage src={track.image} alt={track.title} isActive={isActive} />
-                            <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 pointer-events-none">🎵</div>
+                            <StableImage
+                              src={track.image}
+                              alt={track.title}
+                              isActive={isActive}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-30 pointer-events-none">
+                              🎵
+                            </div>
                           </div>
                           <div className="absolute inset-0 flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100">
                             <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
@@ -662,24 +721,42 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                             </div>
                           </div>
                           {isActive && (
-                            <div className="absolute top-2 right-2 w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: track.theme.accent }} />
+                            <div 
+                              className="absolute top-2 right-2 w-3 h-3 rounded-full animate-pulse"
+                              style={{ backgroundColor: track.theme.accent }}
+                            />
                           )}
                         </div>
                         <div className="text-center flex-1 flex flex-col justify-center">
-                          <div className="font-bold mb-1 text-sm min-h-[1.25rem] transition-colors duration-500" style={{ color: isActive ? track.color : t.text }}>
+                          <div 
+                            className="font-bold mb-1 text-sm min-h-[1.25rem] transition-colors duration-500"
+                            style={{ color: isActive ? track.color : t.text }}
+                          >
                             {track.title}
                           </div>
-                          <div className="text-xs leading-relaxed min-h-[2.5rem] flex items-center justify-center transition-colors duration-700" style={{ color: t.textMuted }}>
+                          <div 
+                            className="text-xs leading-relaxed min-h-[2.5rem] flex items-center justify-center transition-colors duration-700"
+                            style={{ color: t.textMuted }}
+                          >
                             {track.description}
                           </div>
                         </div>
                       </div>
                       <audio
-                        ref={(el) => { audioRefs.current[track.id] = el; }}
+                        ref={(el) => {
+                          audioRefs.current[track.id] = el;
+                        }}
                         src={track.audio}
                         preload="metadata"
-                        onEnded={() => { setCurrentTrack(null); setIsPlaying(false); setCurrentTime(0); }}
-                        onError={(e) => { console.error('Audio error:', e); showToast.error('Failed to load audio. Please check the file.'); }}
+                        onEnded={() => {
+                          setCurrentTrack(null);
+                          setIsPlaying(false);
+                          setCurrentTime(0);
+                        }}
+                        onError={(e) => {
+                          console.error('Audio error:', e);
+                          showToast.error('Failed to load audio. Please check the file.');
+                        }}
                       />
                     </div>
                   );
@@ -695,7 +772,11 @@ export default function Playlist({ onContinue }: PlaylistProps) {
             <button
               onClick={onContinue}
               className="inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 focus:outline-none cursor-pointer"
-              style={{ backgroundColor: t.accent, color: 'white', boxShadow: `0 4px 14px ${t.accent}40` }}
+              style={{
+                backgroundColor: t.accent,
+                color: 'white',
+                boxShadow: `0 4px 14px ${t.accent}40`
+              }}
               aria-label="Continue to next"
             >
               Continue to Next ✨
