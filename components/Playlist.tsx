@@ -679,8 +679,9 @@ export default function Playlist({ onContinue }: PlaylistProps) {
                       key={track.id}
                       className="group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 h-full hover:scale-105 hover:z-10 pointer-events-auto"
                       style={{
-                        boxShadow: isActive ? `0 0 0 2px ${track.theme.ring}, 0 0 0 4px white` : undefined,
-                        borderRadius: isActive ? '0.75rem' : undefined
+                        boxShadow: isActive 
+                        ? `inset 0 0 0 2px ${track.theme.ring}, 0 10px 25px -5px ${track.theme.ring}30`
+                        : undefined
                       }}
                       onClick={() => handleTrackClick(track.id)}
                     >
