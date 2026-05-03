@@ -243,7 +243,7 @@ export default function MessageCard({
                             <div
                               className="mb-6 text-justify"
                               style={{ textIndent: '2rem' }}
-                            Happy 3rd monthsary. It&apos;s hard to believe it has only been three months, because when I look at how much my life has shifted since you&apos;ve been in it, it feels like a lifetime&apos;s worth of happiness has been packed into such a short time. At the same time, it feels like we are just at the first few pages of a book I never want to put down.
+                            >Happy 3rd monthsary. It&apos;s hard to believe it has only been three months, because when I look at how much my life has shifted since you&apos;ve been in it, it feels like a lifetime&apos;s worth of happiness has been packed into such a short time. At the same time, it feels like we are just at the first few pages of a book I never want to put down.
                           
                             I&apos;ve been thinking a lot lately about everything you do for me—the things you probably don&apos;t even realize are changing my world. I want to thank you, from the bottom of my heart, for staying with me. I know things haven&apos;t always been easy, and there are moments when life gets heavy and I start to feel a bit lost. But every single time, you are there. You have this incredible way of lightening the mood just when I need it most. Your presence is like a reset button for my soul; one message or one laugh from you, and suddenly the weight doesn&apos;t feel so heavy anymore.
                           
