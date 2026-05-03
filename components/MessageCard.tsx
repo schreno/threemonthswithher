@@ -239,26 +239,26 @@ export default function MessageCard({
                           <div className="handwriting text-sm sm:text-base leading-relaxed text-[#2C2500] pb-20 pt-6">
                             <div className="mb-4 text-[#8B7300] font-medium">
                               My dearest Divya,
-                            </div>
-                            <div
-                              className="mb-6 text-justify"
-                              style={{ textIndent: '2rem' }}
-                            >Happy 3rd monthsary. It’s hard to believe it has only been three months, because when I look at how much my life has shifted since you’ve been in it, it feels like a lifetime’s worth of happiness has been packed into such a short time. At the same time, it feels like we are just at the first few pages of a book I never want to put down.
-
-                            I’ve been thinking a lot lately about everything you do for me—the things you probably don’t even realize are changing my world. I want to thank you, from the bottom of my heart, for staying with me. I know things haven’t always been easy, and there are moments when life gets heavy and I start to feel a bit lost. But every single time, you are there. You have this incredible way of lightening the mood just when I need it most. Your presence is like a reset button for my soul; one message or one laugh from you, and suddenly the weight doesn't feel so heavy anymore.
-
-                            I’m especially thankful for the effort you put into "us." I see it all—the way you go out of your way to reassure me, the way you make sure I know how much I matter to you, and the way you never let me stay down for too long. That effort means everything to me. It makes me feel safe, and it makes me feel loved in a way I’ve never experienced before.
-
-                            I cherish the simple moments we spend together, like when we’re just lost in our own worlds playing Minecraft or jumping from game to game on Roblox. Even when we’re playing Flee the Facility—which can get pretty intense—there’s nowhere else I’d rather be. It’s not just about the games; it’s about the fact that it’s you I’m playing with. Those moments are my favorite parts of the day because they’re ours.
-
-                            So, I want to make a promise to you today: I am in this forever. Not just for the fun parts or the gaming highlights, but for the hard stuff, the quiet stuff, and everything in between. I promise that we will keep being together forever and ever, and always. I’m not going anywhere. I want to be the one who reassures you, the one who lightens your mood, and the one who stands by you through every challenge life throws at us.
-
+                           <div
+                            className="mb-6 text-justify"
+                            style={{ textIndent: '2rem' }}
+                          >
+                            Happy 3rd monthsary. It&apos;s hard to believe it has only been three months, because when I look at how much my life has shifted since you&apos;ve been in it, it feels like a lifetime&apos;s worth of happiness has been packed into such a short time. At the same time, it feels like we are just at the first few pages of a book I never want to put down.
+                          
+                            I&apos;ve been thinking a lot lately about everything you do for me—the things you probably don&apos;t even realize are changing my world. I want to thank you, from the bottom of my heart, for staying with me. I know things haven&apos;t always been easy, and there are moments when life gets heavy and I start to feel a bit lost. But every single time, you are there. You have this incredible way of lightening the mood just when I need it most. Your presence is like a reset button for my soul; one message or one laugh from you, and suddenly the weight doesn&apos;t feel so heavy anymore.
+                          
+                            I&apos;m especially thankful for the effort you put into &quot;us.&quot; I see it all—the way you go out of your way to reassure me, the way you make sure I know how much I matter to you, and the way you never let me stay down for too long. That effort means everything to me. It makes me feel safe, and it makes me feel loved in a way I&apos;ve never experienced before.
+                          
+                            I cherish the simple moments we spend together, like when we&apos;re just lost in our own worlds playing Minecraft or jumping from game to game on Roblox. Even when we&apos;re playing Flee the Facility—which can get pretty intense—there&apos;s nowhere else I&apos;d rather be. It&apos;s not just about the games; it&apos;s about the fact that it&apos;s you I&apos;m playing with. Those moments are my favorite parts of the day because they&apos;re ours.
+                          
+                            So, I want to make a promise to you today: I am in this forever. Not just for the fun parts or the gaming highlights, but for the hard stuff, the quiet stuff, and everything in between. I promise that we will keep being together forever and ever, and always. I&apos;m not going anywhere. I want to be the one who reassures you, the one who lightens your mood, and the one who stands by you through every challenge life throws at us.
+                          
                             You are my heart, my peace, and my greatest blessing. I pray and I hope with everything I have that what we have lasts for a lifetime and beyond. Thank you for these amazing three months, for your love, and for just being you.
-
+                          
                             I love you more than words can say, and more than any game could ever capture. Always and forever.
-
+                          
                             Happy 3rd Monthsary, Love.
-                            </div>
+                          </div>
                             <div className="mt-8 ml-auto w-fit">
                               <div className="font-medium text-[#8B7300]">
                                 <TypewriterText
