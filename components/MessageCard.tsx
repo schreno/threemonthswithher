@@ -241,28 +241,29 @@ export default function MessageCard({
                               My dearest Divya,
                             </div>
                             <div
-                              className="mb-6 text-justify"
-                              style={{ textIndent: '2rem' }}
-                            >Happy 3rd monthsary. It&apos;s hard to believe it has only been three months, because when I look at how much my life has shifted since you&apos;ve been in it, it feels like a lifetime&apos;s worth of happiness has been packed into such a short time. At the same time, it feels like we are just at the first few pages of a book I never want to put down.
-                          
-                            I&apos;ve been thinking a lot lately about everything you do for me—the things you probably don&apos;t even realize are changing my world. I want to thank you, from the bottom of my heart, for staying with me. I know things haven&apos;t always been easy, and there are moments when life gets heavy and I start to feel a bit lost. But every single time, you are there. You have this incredible way of lightening the mood just when I need it most. Your presence is like a reset button for my soul; one message or one laugh from you, and suddenly the weight doesn&apos;t feel so heavy anymore.
-                          
-                            I&apos;m especially thankful for the effort you put into &quot;us.&quot; I see it all—the way you go out of your way to reassure me, the way you make sure I know how much I matter to you, and the way you never let me stay down for too long. That effort means everything to me. It makes me feel safe, and it makes me feel loved in a way I&apos;ve never experienced before.
-                          
-                            I cherish the simple moments we spend together, like when we&apos;re just lost in our own worlds playing Minecraft or jumping from game to game on Roblox. Even when we&apos;re playing Flee the Facility—which can get pretty intense—there&apos;s nowhere else I&apos;d rather be. It&apos;s not just about the games; it&apos;s about the fact that it&apos;s you I&apos;m playing with. Those moments are my favorite parts of the day because they&apos;re ours.
-                          
-                            So, I want to make a promise to you today: I am in this forever. Not just for the fun parts or the gaming highlights, but for the hard stuff, the quiet stuff, and everything in between. I promise that we will keep being together forever and ever, and always. I&apos;m not going anywhere. I want to be the one who reassures you, the one who lightens your mood, and the one who stands by you through every challenge life throws at us.
-                          
-                            You are my heart, my peace, and my greatest blessing. I pray and I hope with everything I have that what we have lasts for a lifetime and beyond. Thank you for these amazing three months, for your love, and for just being you.
-                          
-                            I love you more than words can say, and more than any game could ever capture. Always and forever.
-                          
-                            Happy 3rd Monthsary, Love.
-                          </div>
+                          className="mb-6 text-justify"
+                          style={{ textIndent: '2rem' }}
+                        >
+                          HAPPY 3RD MONTHSARYYY, MY LOVEEEEEEE.
+                          <br /><br />
+                          Ive been sitting here trying to find the perfect words to capture everything that im feeling, pero ang totoo is that, no matter how long i make this letter, it will never be enough to describe how much you trulyyy mean to me. Para sa 'kin, in just three short months, you’ve alwayss managed to become the best part of my every day, my safest harbor and space, and the person that i genuinely and with all my heart want to share my every single forever with.
+                          <br /><br />
+                          First baby, i want to start by saying thank you. Thank you for staying with me, especially during those times when things got hard and the world felt a little too heavy for me to carry on my own. You may havent noticed pero may mga moments when i'm completely lost, drifting in my own thoughts, but the thing is baby, your love is like a lighthouse that always brings me back home kasi for some reason, you have this beautiful, effortless way of lightening the mood just by being yourself baby kasi honestly, one laugh just from you, one sweet word of reassurance, and suddenly the darkness doesn’t seem so scary anymore.
+                          <br /><br />
+                          Cara, i am so so so so sooooo soooooooo INCREDIBLYY THANKFULL for the effort you give us and i see it in the way you make sure im okay, in the way you never let me doubt where i stand with you, andd in the way you constantly reassure my heart at ang nakikita ko is that you don’t just say you love me baby; you show it in the way you choose me every single day, that you chose to stay with me, chose to love me and chose to create these very memories with me.
+                          <br /><br />
+                          Kahit sa mga maliliit na bagay na ginagawa natin together means the WHOLEEE universe to me. I cherish every hour we spend together in our own worlds whether we build something in together minecraft and admire our base afterwards, playing different roblox games games, the fun times whenever we play chaos, the adrenaline and the feeling of accomplishment whenever we win together in flee the facility, and other games that we have played all throughout, para sa 'kin kasi baby, those aren't just games to me. They are memories. They are the moments where i feel most connected to you, laughing and just being yk, us and it doesn’t matter what were doing or what game we’re playing and as long as your name is on my screen and your voice is in my ear, i am EXACTLY where im supposed to be.
+                          <br /><br />
+                          So cara, here is my promise to you, written from the deepest part of my heart: i promise that we will keep being together forever and ever, and always and alam ko sa sobrang daming beses ko 'tong sinasabi but i'll still say it anyways is that i am not just here for the fun times or the easy days. I am HERE for the struggles, the growth, and the quiet moments and everything in between. I also promise din na to hold your hand through every storm and to be the person who lightens your mood just like you do for me. Please baby, laging lagi mong tatandaan that i promise that im yours, completely and indefinitely forever.
+                          <br /><br />
+                          I hope and pray with everything i am that this love lasts a damn lifetime and one of my goals is that i want to look back fifty years from now and tell you that my heart still beats the same way it did on our 3rd monthsary. Cara, always know that you are my greatest blessing, my favorite person, my love, my wife, my safe haven, my home, my treasure, and my entire universe.
+                          <br /><br />
+                          Thank you for loving me. Thank you for being my peace and i love you more than all the stars in the sky and every block we’ve ever placed together baby.
+                        </div>
                             <div className="mt-8 ml-auto w-fit">
                               <div className="font-medium text-[#8B7300]">
                                 <TypewriterText
-                                  text="With all my love, Always yours ✨"
+                                  text="Always and forever, Your Carl 💜💛"
                                   duration={2}
                                   delay={0}
                                   onComplete={() =>
