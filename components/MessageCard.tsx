@@ -240,10 +240,10 @@ export default function MessageCard({
                             <div className="mb-4 text-[#8B7300] font-medium">
                               My dearest Divya,
                             </div>
-                            <div
-                              className="mb-6 text-justify"
-                              style={{ textIndent: '0.35rem' }}
-                           >
+                          <div
+                            className="mb-6 text-justify"
+                            style={{ textIndent: '1.2rem', lineHeight: '1.6' }} 
+                          >
                             HAPPY 3RD MONTHSARYYY, MY LOVEEEEEEE.
                             <br /><br />
                             Ive been sitting here trying to find the perfect words to capture everything that im feeling, pero ang totoo is that, no matter how long i make this letter, it will never be enough to describe how much you trulyyy mean to me. Para sa &apos;kin, in just three short months, you&apos;ve alwayss managed to become the best part of my every day, my safest harbor and space, and the person that i genuinely and with all my heart want to share my every single forever with.
