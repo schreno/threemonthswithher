@@ -237,7 +237,7 @@ export default function MessageCard({
                           </div>
 
                           <div className="handwriting text-sm sm:text-base leading-relaxed text-[#2C2500] pb-20 pt-6">
-                            <div className="mb-4 text-[#8B7300] font-medium">
+                            <div className="mb-4 text-[#ffd129] font-medium">
                               My dearest Cara,
                             </div>
                            <div
@@ -254,7 +254,7 @@ export default function MessageCard({
                             <p>Thank you for loving me. Thank you for being my peace and i love you more than all the stars in the sky and every block we&apos;ve ever placed together baby.</p>
                           </div>
                             <div className="mt-8 ml-auto w-fit">
-                              <div className="font-medium text-[#8B7300]">
+                              <div className="font-medium text-[#ffd129]">
                                 <TypewriterText
                                   text="Always and forever, Your Carl"
                                   duration={2}
