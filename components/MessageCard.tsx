@@ -236,18 +236,14 @@ export default function MessageCard({
                             </div>
                           </div>
 
-                          <div className="handwriting text-sm sm:text-base leading-relaxed text-[#2C2500] pb-20 pt-6">
+                    <div className="handwriting text-sm sm:text-base leading-relaxed text-[#2C2500] pb-20 pt-6">
                             <div className="mb-4 text-[#8B7300] font-medium">
                               My dearest Cara,
                             </div>
-                          <div className="handwriting text-sm sm:text-base leading-relaxed text-[#2C2500] pb-20 pt-6">
-                          <div className="mb-4 text-[#8B7300] font-medium">
-                            My dearest Cara,
-                          </div>
-                          <div
-                            className="mb-6 text-justify"
-                            style={{ textIndent: '2rem' }}
-                          >
+                            <div
+                              className="mb-6 text-justify"
+                              style={{ textIndent: '2rem' }}
+                            >
                             HAPPY 3RD MONTHSARYYY, MY LOVEEEEEEE.
                             <br /><br />
                             Ive been sitting here trying to find the perfect words to capture everything that im feeling, pero ang totoo is that, no matter how long i make this letter, it will never be enough to describe how much you trulyyy mean to me. Para sa &apos;kin, in just three short months, you&apos;ve alwayss managed to become the best part of my every day, my safest harbor and space, and the person that i genuinely and with all my heart want to share my every single forever with.
