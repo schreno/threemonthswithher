@@ -27,7 +27,7 @@ const messagePool = [
   "yeah i still can't believe i AM the one who gets to be with you. happy 3rd month, loveyyyy 🥂🥹",
   "just a reminder: you're beautiful and i am CRAZILYYYYY INSANELYYYY obsessed with you 🤤💖",
   "i don't take a single second with you for granted. you are my everything to me bebiii 💛💜",
-  "my favorite duo partner for life. whether it's the random talks, laughs, chikas, gaming, chilling, watching, getting bored w you, the g-times🤤, the sad and happy times, it's always better with you 😽🌻"
+  "my favorite duo partner for life. whether it's the random talks, laughs, chikas, gaming, chilling, watching, getting bored w you, the g-times🤤, the sad and happy times, it's always better with you 😽🌻",
   "HASHSAHASDHAH NO BUT SRSLY HOW ARE U SO CUTE?? i literally stare at your pics for hours bebiii i'm so whipped for u 😭🫠💖",
   "every time i hear your voice i just..AAAAAAAAAAA it makes me so kilig parin kahit 3 months na tayo. i love u so muchieeee 😚💛",
   "manifesting more years and years and yearssss with u. ikaw lang talaga sapat na sapat na baby 🥹🫶✨",
