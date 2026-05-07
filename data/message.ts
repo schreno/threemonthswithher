@@ -1,18 +1,19 @@
 export const messageData = {
-  title: 'Happy National Princess Day 👑',
-  subtitle: 'To my favorite princess — today, and every day.',
-  body: `Hey princess,
+  title: 'Happy 3rd Monthsary, My Loveyyy! 🌻',
+  subtitle: 'to the girl who literally made my whole world 100x brighter ✨',
+  body: `hey baby,
 
-I found something pretty today and it made me think of you — soft, bright, and impossible not to smile at. I wanted to celebrate you — your kindness, your laugh, the way you brighten my days.
+hehhhheh i honestly don't even know where to start.. it's already been 3 months?? it feels like just yesterday when everything started and now i'm here, crazier and more obsessed with u than ever 😭💖🫠
 
-You're my queen of small things and big heart. Happy National Princess Day. 🌸
+thank u for being the best partner, my bestfriend, and my favorite sunshine. whether we're gaming, having random chikas, or just doing nothing together, everything is just 1000x better basta ikaw kasama ko bebiiiiii
 
-— With all my love, Rushi`,
-  cta: 'Open your gift ✨',
+you're literally my world and i'm so so sooo lucky i get to be the one holding your hand. i love you more than all the sunflowers in the world!! to more months and years of us being makulit together. happy monthsary, Cara!! 🥂🥹💛
+
+— yours always, Carl Matthew`,
+  cta: 'Open your surprise ✨',
   toast: {
-    copied: 'Message copied! Send it with a heart 💌',
-    error: "Couldn't copy — try again",
-    shared: 'Shared! 💕',
+    copied: 'copied na baby! send it to her with all the hearts 💌',
+    error: "hala wait, try again bebiii",
+    shared: 'shared na! spread the loveee 💕',
   },
 };
-
