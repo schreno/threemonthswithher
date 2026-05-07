@@ -230,22 +230,22 @@ const tracks: Track[] = [
     description: "I'd risk it all for you, always and forever 🤤💜💛",
     image: "/assets/riskitall.gif",
     audio: "/assets/riskitall-song.mp3",
-    color: "#991B1B",
-   theme: {
-      bg: '#FEF2F2',
-      cardBg: '#FEE2E2',
-      border: '#F87171',
-      accent: '#B91C1C',
-      text: '#450A0A',
-      textMuted: '#7F1D1D',
-      progressFill: '#B91C1C',
-      progressTrack: '#FECACA',
-      arrowText: '#7F1D1D',
-      decorative1: '#EF4444',
-      decorative2: '#FCA5A5',
-      decorative3: '#991B1B',
-      playerBg: 'rgba(254,226,226,0.9)',
-      ring: '#B91C1C',
+    color: "#EA580C",
+    theme: {
+      bg: '#FFF7ED',            // Very light orange-tinted white
+      cardBg: '#FFEDD5',        // Soft apricot cream
+      border: '#FDBA74',        // Warm peach border
+      accent: '#EA580C',        // The primary "Risk" orange
+      text: '#7C2D12',          // Deep burnt umber for readability
+      textMuted: '#9A3412',     // Rust brown for secondary text
+      progressFill: '#EA580C',  // Vibrant orange bar
+      progressTrack: '#FED7AA', // Faded melon track
+      arrowText: '#9A3412',     // Muted rust for UI icons
+      decorative1: '#FB923C',   // Bright carrot orange
+      decorative2: '#FDBA74',   // Sunlight yellow-orange
+      decorative3: '#C2410C',   // Darker brick orange for contrast
+      playerBg: 'rgba(255, 237, 213, 0.85)', // Semi-transparent peach
+      ring: '#EA580C',          // Bold focus ring
     }
   }
 ];
