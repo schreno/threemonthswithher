@@ -262,83 +262,80 @@ export default function MessageCard({
                             Thank you for loving me. Thank you for being my peace and i love you more than all the stars in the sky and every block we&apos;ve ever placed together baby.
                           </div>
                         </div>
-                            <div className="mt-8 ml-auto w-fit">
-                              <div className="font-medium text-[#8B7300]">
-                                <TypewriterText
-                                  text="Always and forever, Your Carl 💜💛"
-                                  duration={2}
-                                  delay={0}
-                                  onComplete={() =>
-                                    setTypewriterComplete((prev) => ({
-                                      ...prev,
-                                      signature: true,
-                                    }))
-                                  }
-                                  showCursor={false}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                           <div className="mt-8 ml-auto w-fit">
+              <div className="font-medium text-[#8B7300]">
+                <TypewriterText
+                  text="Always and forever, Your Carl 💜💛"
+                  duration={2}
+                  delay={0}
+                  onComplete={() =>
+                    setTypewriterComplete((prev) => ({
+                      ...prev,
+                      signature: true,
+                    }))
+                  }
+                  showCursor={false}
+                />
+              </div>
+            </div>
 
-                        {/* Yellow Heart stamp SVG */}
-                        <div className="absolute bottom-4 left-4 transform -rotate-12 animate-float-slow opacity-40">
-                          <svg
-                            width="120"
-                            height="120"
-                            viewBox="0 0 200 200"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-24 h-24"
-                          >
-                            <g fill="#FFC107" opacity="0.9">
-                                {/* Circles for the dotted border - simplified */}
-                                <circle cx="100" cy="12" r="3" />
-                                <circle cx="188" cy="100" r="3" />
-                                <circle cx="100" cy="188" r="3" />
-                                <circle cx="12" cy="100" r="3" />
-                            </g>
-                            <circle cx="100" cy="100" r="72" stroke="#FFC107" strokeWidth="5" fill="none" opacity="0.9" />
-                            <path
-                              d="M100 82 C100 68 82 68 82 82 C82 96 100 108 100 108 C100 108 118 96 118 82 C118 68 100 68 100 82 Z"
-                              fill="#FFC107"
-                              stroke="#A68A00"
-                              strokeWidth="1"
-                            />
-                            <path id="topArc" d="M50 90 A45 45 0 0 1 150 95" fill="none" />
-                            <text fontSize="14" textAnchor="middle" fill="#8B7300" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.2em', fontWeight: 600 }}>
-                              <textPath href="#topArc" startOffset="50%">{stampText.love || ''}</textPath>
-                            </text>
-                            <path id="bottomArc" d="M155 110 A55 50 0 0 1 45 110" fill="none" />
-                            <text fontSize="12" textAnchor="middle" fill="#A68A00" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.15em', fontWeight: 500 }}>
-                              <textPath href="#bottomArc" startOffset="50%">{stampText.stamped || ''}</textPath>
-                            </text>
-                          </svg>
-                        </div>
-                      </div>
+            {/* Yellow Heart stamp SVG - Moved inside the white letter container or relative to it */}
+            <div className="absolute bottom-4 left-4 transform -rotate-12 animate-float-slow opacity-40">
+              <svg
+                width="120"
+                height="120"
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-24 h-24"
+              >
+                <g fill="#FFC107" opacity="0.9">
+                  <circle cx="100" cy="12" r="3" />
+                  <circle cx="188" cy="100" r="3" />
+                  <circle cx="100" cy="188" r="3" />
+                  <circle cx="12" cy="100" r="3" />
+                </g>
+                <circle cx="100" cy="100" r="72" stroke="#FFC107" strokeWidth="5" fill="none" opacity="0.9" />
+                <path
+                  d="M100 82 C100 68 82 68 82 82 C82 96 100 108 100 108 C100 108 118 96 118 82 C118 68 100 68 100 82 Z"
+                  fill="#FFC107"
+                  stroke="#A68A00"
+                  strokeWidth="1"
+                />
+                <path id="topArc" d="M50 90 A45 45 0 0 1 150 95" fill="none" />
+                <text fontSize="14" textAnchor="middle" fill="#8B7300" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.2em', fontWeight: 600 }}>
+                  <textPath href="#topArc" startOffset="50%">{stampText.love || ''}</textPath>
+                </text>
+                <path id="bottomArc" d="M155 110 A55 50 0 0 1 45 110" fill="none" />
+                <text fontSize="12" textAnchor="middle" fill="#A68A00" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.15em', fontWeight: 500 }}>
+                  <textPath href="#bottomArc" startOffset="50%">{stampText.stamped || ''}</textPath>
+                </text>
+              </svg>
+            </div>
+          </div> {/* End of white letter container */}
 
-                      {/* Continue button */}
-                      {typewriterComplete.signature &&
-                        typewriterComplete.love &&
-                        typewriterComplete.stamped && (
-                          <div className="flex justify-center mt-6 animate-slideUp">
-                          <motion.button
-                            onClick={() => setShowPlaylist(true)} 
-                            className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFD700] text-[#54470C] font-bold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-400/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                                Keep going, baby.. 🌻
-                            </motion.button>
-                          </div>
-                        )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-    </div>
-  );
+          {/* Continue button */}
+          {typewriterComplete.signature &&
+            typewriterComplete.love &&
+            typewriterComplete.stamped && (
+              <div className="flex justify-center mt-6 animate-slideUp">
+                <motion.button
+                  onClick={() => setShowPlaylist(true)}
+                  className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#FFD700] text-[#54470C] font-bold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-yellow-400/50 focus:outline-none focus:ring-4 focus:ring-yellow-300 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Keep going, baby.. 🌻
+                </motion.button>
+              </div>
+            )}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </motion.div>
+)}
+</AnimatePresence>
+</div>
+</div>
+</div>
+);
 }
