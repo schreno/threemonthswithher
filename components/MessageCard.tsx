@@ -238,7 +238,7 @@ export default function MessageCard({
 
                           <div className="handwriting text-sm sm:text-base leading-relaxed text-[#2C2500] pb-20 pt-6">
                             <div className="mb-4 text-[#8B7300] font-medium">
-                              My dearest Divya,
+                              My dearest Cara,
                             </div>
                            <div
                               className="mb-6 text-justify space-y-2"
@@ -256,7 +256,7 @@ export default function MessageCard({
                             <div className="mt-8 ml-auto w-fit">
                               <div className="font-medium text-[#8B7300]">
                                 <TypewriterText
-                                  text="With all my love, Always yours ✨"
+                                  text="Always and forever, Your Carl"
                                   duration={2}
                                   delay={0}
                                   onComplete={() =>
