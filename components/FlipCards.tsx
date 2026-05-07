@@ -45,7 +45,7 @@ const messagePool = [
   "every time u message me i still get those butterflies parin.. 3 months in and it still feels like the first day. i'm so in love w u baby 😭🫠💛",
   "u r literally my everything. my bestfriend, my duo, my baby, my loveyyy.. everything. thank u for existing bebiii 🥹🫶✨",
   "HAKDHASHADHA no but srsly ur so makulit but that's why i love u. never change baby, i love every single bit of u 😽💖",
-  "3 months down, infinite more to go!! i'm ready for everything basta ikaw kasama ko. i love u more than anything else in this world baby 🥂🥹💛"
+  "3 months down, infinite more to go!! i'm ready for everything basta ikaw kasama ko. i love u more than anything else in this world baby 🥂🥹💛",
 
   "HAKDHASHADHA no. but srsly, how did i get this lucky?? like actually?? i must've saved a planet in my past life to have u 😭💖✨",
   "good morning/afternoon/evening baby!! just a reminder that u r the love of my life and i'm literally never letting u go 😤💛",
