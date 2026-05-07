@@ -240,9 +240,6 @@ export default function MessageCard({
                             <div className="mb-4 text-[#8B7300] font-medium">
                               My dearest Cara,
                             </div>
-                          <div className="handwriting text-sm sm:text-base leading-relaxed text-[#2C2500] pb-20 pt-6">
-                          <div className="mb-4 text-[#8B7300] font-medium">
-                            My dearest Cara,
                           </div>
                           <div
                             className="mb-6 text-justify"
