@@ -260,7 +260,6 @@ export default function MessageCard({
                             <br /><br />
                             Thank you for loving me. Thank you for being my peace and i love you more than all the stars in the sky and every block we&apos;ve ever placed together baby.
                           </div>
-                        </div>
                             <div className="mt-8 ml-auto w-fit">
                               <div className="font-medium text-[#8B7300]">
                                 <TypewriterText
