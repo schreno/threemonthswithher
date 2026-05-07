@@ -8,10 +8,9 @@ interface FlipCardsProps {
   onRestart?: () => void;
 }
 
-interface Card {
+interface CardData {
   id: number;
   image: string;
-  message: string;
   gradient: string;
   delay: number;
 }
@@ -51,46 +50,68 @@ const messagePool = [
 
 export default function FlipCards({ onRestart }: FlipCardsProps) {
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+  const [cardMessages, setCardMessages] = useState<Record<number, string>>({});
   const [showModal, setShowModal] = useState(false);
   const [showFinalLetter, setShowFinalLetter] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
-  // Avoid hydration mismatch by waiting for mount
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Randomize the messages only once when the component mounts
-  const randomizedCards = useMemo(() => {
+  const cards = useMemo<CardData[]>(() => {
     const images = ['/assets/sf1.jpg', '/assets/sf2.jpg', '/assets/sf3.jpg'];
     const gradients = [
       'from-yellow-100 to-amber-200',
       'from-orange-100 to-yellow-200',
       'from-yellow-200 to-amber-300',
     ];
-
-    // Shuffle and pick 3 unique messages
-    const shuffledMessages = [...messagePool].sort(() => 0.5 - Math.random());
-
     return [0, 1, 2].map((i) => ({
       id: i + 1,
       image: images[i],
-      message: shuffledMessages[i],
       gradient: gradients[i],
       delay: i * 0.2,
     }));
   }, []);
 
+  const getRandomMessage = (exclude: string[]): string => {
+    const available = messagePool.filter((m) => !exclude.includes(m));
+    const pool = available.length > 0 ? available : messagePool;
+    return pool[Math.floor(Math.random() * pool.length)];
+  };
+
   const handleCardClick = (cardId: number) => {
-    setFlippedCards((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(cardId)) {
-        newSet.delete(cardId);
-      } else {
-        newSet.add(cardId);
-      }
-      return newSet;
-    });
+    const isFlipped = flippedCards.has(cardId);
+
+    if (isFlipped) {
+      // Unflip: remove from flipped set and clear its message
+      setFlippedCards((prev) => {
+        const next = new Set(prev);
+        next.delete(cardId);
+        return next;
+      });
+      setCardMessages((prev) => {
+        const next = { ...prev };
+        delete next[cardId];
+        return next;
+      });
+    } else {
+      // Flip: add to flipped set and assign a unique random message
+      setFlippedCards((prev) => {
+        const next = new Set(prev);
+        next.add(cardId);
+        return next;
+      });
+      setCardMessages((prev) => {
+        const otherMessages = Object.entries(prev)
+          .filter(([id]) => Number(id) !== cardId)
+          .map(([, msg]) => msg);
+        return {
+          ...prev,
+          [cardId]: getRandomMessage(otherMessages),
+        };
+      });
+    }
   };
 
   useEffect(() => {
@@ -140,7 +161,7 @@ export default function FlipCards({ onRestart }: FlipCardsProps) {
 
         <div className="bg-[#FFFDF0] rounded-2xl sm:rounded-3xl p-3 sm:p-5 md:p-6 border border-yellow-200 shadow-xl animate-fadeIn">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
-            {randomizedCards.map((card) => {
+            {cards.map((card) => {
               const isFlipped = flippedCards.has(card.id);
               return (
                 <div
@@ -169,7 +190,7 @@ export default function FlipCards({ onRestart }: FlipCardsProps) {
                       <div className="text-center space-y-2 h-full flex flex-col justify-center">
                         <div className="flex-1 flex items-center justify-center">
                           <div className="text-xs sm:text-sm leading-relaxed text-[#2C2500] px-1 overflow-y-auto max-h-full handwriting">
-                            {card.message}
+                            {cardMessages[card.id] || '✨'}
                           </div>
                         </div>
                         <div className="pt-1">
