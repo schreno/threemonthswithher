@@ -32,7 +32,7 @@ const messagePool = [
   "every time i hear your voice i just..AAAAAAAAAAA it makes me so kilig parin kahit 3 months na tayo. i love u so muchieeee 😚💛",
   "manifesting more years and years and yearssss with u. ikaw lang talaga sapat na sapat na baby 🥹🫶✨",
   "staying up late just to talk to u is literally the highlight of my whole day. i'd choose u every single time bebiii 🧸💛",
-  "happy 3 months to us my loveyyy!! stay as makulit and as beautiful as u are. i'm always here for u no matter what happens 🫡💖✨"
+  "happy 3 months to us my loveyyy!! stay as makulit and as beautiful as u are. i'm always here for u no matter what happens 🫡💖✨",
   "HAKDHAHSADHH PLS UR SO PRETTY FOR WHAT??? i actually can't handle it anymore bebiii my heart is literally gonna burst 😭💖",
   "good luck nalang talaga sakin kasi i'm never getting over you. never ever ever everrr everrrr!! u r mine forever perioddddd 😤💛✨",
   "i love our random chikas and everything in between.. thank u for being my safe space baby. i love u so muchie so muchieeee 🥹😚",
