@@ -223,6 +223,30 @@ const tracks: Track[] = [
       playerBg: 'rgba(255,237,213,0.85)',
       ring: '#EA580C',
     }
+  }, 
+  {
+    id: 8,
+    title: "Risk It All",
+    description: "I'd risk it all for you, always and forever 🤤💜💛",
+    image: "/assets/riskitall.gif",
+    audio: "/assets/riskitall-song.mp3",
+    color: "#991B1B",
+   theme: {
+      bg: '#FEF2F2',
+      cardBg: '#FEE2E2',
+      border: '#F87171',
+      accent: '#B91C1C',
+      text: '#450A0A',
+      textMuted: '#7F1D1D',
+      progressFill: '#B91C1C',
+      progressTrack: '#FECACA',
+      arrowText: '#7F1D1D',
+      decorative1: '#EF4444',
+      decorative2: '#FCA5A5',
+      decorative3: '#991B1B',
+      playerBg: 'rgba(254,226,226,0.9)',
+      ring: '#B91C1C',
+    }
   }
 ];
 
