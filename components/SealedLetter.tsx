@@ -100,7 +100,7 @@ export default function SealedLetter({
               Letter Sealed with Sunshine
             </h2>
             <p className="text-sm sm:text-base text-[#A68A00] mb-5 font-medium">
-              I Love You Always, Divya
+              I Love You Always, Cara
             </p>
 
             {/* Animated Sunbeams/Hearts */}
