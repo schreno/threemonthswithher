@@ -241,7 +241,7 @@ export default function MessageCard({
                               My dearest Divya,
                             </div>
                            <div
-                              className="mb-6 text-justify space-y-3"
+                              className="mb-6 text-justify space-y-2"
                               style={{ textIndent: '2rem' }}
                             >
                             <p>HAPPY 3RD MONTHSARYYY, MY LOVEEEEEEE.</p>
