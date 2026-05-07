@@ -242,7 +242,7 @@ export default function MessageCard({
                             </div>
                           <div
                             className="mb-6 text-justify"
-                            style={{ textIndent: '1.2rem', lineHeight: '1.6' }} 
+                            style={{ textIndent: '0.2rem', lineHeight: '1.6' }}
                           >
                             HAPPY 3RD MONTHSARYYY, MY LOVEEEEEEE.
                             <br /><br />
