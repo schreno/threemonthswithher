@@ -19,14 +19,14 @@ interface Card {
 const cards: Card[] = [
   {
     id: 1,
-    image: '/assets/sf1.png',
+    image: '/assets/sf1.jpg',
     message: 'I Love u Divya 💕',
     gradient: 'from-yellow-100 to-amber-200',
     delay: 0,
   },
   {
     id: 2,
-    image: '/assets/sf2.png',
+    image: '/assets/sf2.jpg',
     message:
       "You don't even have to try — you just make everything around you feel lighter, warmer, better. ✨",
     gradient: 'from-orange-100 to-yellow-200',
@@ -34,7 +34,7 @@ const cards: Card[] = [
   },
   {
     id: 3,
-    image: '/assets/sf3.png',
+    image: '/assets/sf3.jpg',
     message:
       "The little things you do — your expressions, your laughter, the way you talk — they've all become my favorite details. 🌻",
     gradient: 'from-yellow-200 to-amber-300',
