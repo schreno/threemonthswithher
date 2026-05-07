@@ -242,7 +242,7 @@ export default function MessageCard({
                             </div>
                            <div
                               className="mb-6 text-justify space-y-6"
-                              style={{ textIndent: '2rem', lineHeight: '1' }} }}
+                              style={{ textIndent: '2rem', lineHeight: '1' }}
                             >
                             <p>HAPPY 3RD MONTHSARYYY, MY LOVEEEEEEE.</p>
                             <p>Ive been sitting here trying to find the perfect words to capture everything that im feeling, pero ang totoo is that, no matter how long i make this letter, it will never be enough to describe how much you trulyyy mean to me. Para sa &apos;kin, in just three short months, you&apos;ve alwayss managed to become the best part of my every day, my safest harbor and space, and the person that i genuinely and with all my heart want to share my every single forever with.</p>
