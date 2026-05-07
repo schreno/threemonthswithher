@@ -49,12 +49,10 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
 
   return (
     <div className="page-container">
-      {/* Background changed to a soft warm cream/yellow */}
       <div className="font-display min-h-screen flex items-center justify-center py-10 px-4 bg-[#FFFDF0] relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 z-0">
           <div className="absolute inset-0 grid-paper opacity-20"></div>
           
-          {/* Updated Floating Icons to Yellow/Gold Palette */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -116,7 +114,6 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-yellow-100 relative"
           >
-            {/* Subtle sunflower watermark or accent */}
             <div className="absolute top-4 right-4 text-2xl opacity-20">🌻</div>
 
             <div className="flex items-center justify-between mb-6">
@@ -138,34 +135,36 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                   </svg>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-[#2C2500]">
-                  Final Love Letter
+                  to my favorite human... 💌
                 </h3>
               </div>
             </div>
 
             <article className="handwriting text-sm sm:text-base text-[#2C2500] leading-relaxed space-y-4">
               <p className="text-[#8B7300] font-semibold text-lg">
-                My sweetest Cutiepie,
+                HIIII MY BABYYYYYYY 🥹🌻
               </p>
               <p>
-                You&apos;re the calm I reach for and the laugh that brightens my
-                day. ☀️
+                i honestly can&apos;t believe it&apos;s already been 3 months of us being together. 
+                it feels so fast but at the same time, i feel like i&apos;ve known u forever 😭🫠
               </p>
               <p className="text-[#A68A00] bg-yellow-50/50 p-2 rounded-lg">
-                I hope this tiny world made you smile — and whispered how much
-                you mean to me.
+                i hope this tiny little website i made for u makes u smile even just a bit!! 
+                u deserve literally the wholeee wideeee world and i&apos;m gonna spend 
+                every day trying to give it to u. AAAAAAAAA I LOVE U SO MUCHIE!!
               </p>
               <p>
-                I&apos;ll keep making memories, big and small, always with you.
+                thank u for being my peace, my duo partner for life, and my biggest w. 
+                can&apos;t wait for 1000000000 more memories with u bebiii 💛💜
               </p>
               <p className="text-[#8B7300] font-medium border-l-4 border-yellow-400 pl-4">
-                Forever yours, in every little universe. 🌻
+                ikaw lang talaga sapat na sapat na baby. happy 3rd monthsary!! 🌻✨
               </p>
             </article>
 
             <div className="mt-8 flex flex-col sm:flex-row justify-between gap-4 items-center border-t border-yellow-50 pt-6">
               <div className="text-xs text-[#A68A00] font-medium">
-                Sealing will finish our little journey.
+                finish na baby?? seal it with a hearttt 💌
               </div>
               
               <div className="flex gap-3 relative">
@@ -197,7 +196,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                   disabled={isSealed}
                   className="rounded-full bg-gradient-to-r from-[#FBC02D] to-[#FFD700] px-6 py-2.5 text-sm sm:text-base font-bold text-[#54470C] shadow-md hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  {isSealed ? 'Sealed 🌻' : 'Seal with Love 💌'}
+                  {isSealed ? 'Sealed for u baby!! 🌻' : 'Seal with Love 💌'}
                 </button>
                 
                 {onRestart && (
@@ -205,7 +204,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                     onClick={onRestart}
                     className="rounded-full bg-[#FFF9C4] text-[#8B7300] px-4 py-2.5 text-sm sm:text-base font-medium shadow-sm hover:bg-[#FFF59D] transition cursor-pointer border border-yellow-100"
                   >
-                    Restart
+                    Repeat journey?
                   </button>
                 )}
               </div>
