@@ -206,31 +206,7 @@ const tracks: Track[] = [
     description: "I'll give you all my life, my seasons. By your side, I'll be your seasons ☀️💛",
     image: "/assets/wte.jpg",
     audio: "/assets/wte-song.mp3",
-    color: "#EA580C",
-    theme: {
-      bg: '#FFF7ED',
-      cardBg: '#FFEDD5',
-      border: '#FDBA74',
-      accent: '#EA580C',
-      text: '#7C2D12',
-      textMuted: '#9A3412',
-      progressFill: '#EA580C',
-      progressTrack: '#FED7AA',
-      arrowText: '#9A3412',
-      decorative1: '#FB923C',
-      decorative2: '#FDBA74',
-      decorative3: '#C2410C',
-      playerBg: 'rgba(255,237,213,0.85)',
-      ring: '#EA580C',
-    }
-  }, 
-   {
-    id: 8,
-    title: "Risk It All",
-    description: "I'd risk it ALLLLLLLLLLLLLLLL for you, always and forever 🤤🧡✨",
-    image: "/assets/riskitall.gif",
-    audio: "/assets/riskitall-song.mp3",
-    color: "#059669",
+      color: "#059669",
     theme: {
       bg: '#ECFDF5',
       cardBg: '#D1FAE5',
@@ -246,6 +222,31 @@ const tracks: Track[] = [
       decorative3: '#047857',
       playerBg: 'rgba(209,250,229,0.85)',
       ring: '#059669',
+    }
+
+  }, 
+   {
+    id: 8,
+    title: "Risk It All",
+    description: "I'd risk it ALLLLLLLLLLLLLLLL for you, always and forever 🤤🧡✨",
+    image: "/assets/riskitall.gif",
+    audio: "/assets/riskitall-song.mp3",
+     color: "#EA580C",
+    theme: {
+      bg: '#FFF7ED',
+      cardBg: '#FFEDD5',
+      border: '#FDBA74',
+      accent: '#EA580C',
+      text: '#7C2D12',
+      textMuted: '#9A3412',
+      progressFill: '#EA580C',
+      progressTrack: '#FED7AA',
+      arrowText: '#9A3412',
+      decorative1: '#FB923C',
+      decorative2: '#FDBA74',
+      decorative3: '#C2410C',
+      playerBg: 'rgba(255,237,213,0.85)',
+      ring: '#EA580C',
     }
   }
 ];
